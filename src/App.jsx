@@ -1,24 +1,13 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Upload, Users, UserCheck, GraduationCap, MapPin, BookOpen, Search, Activity, FileSpreadsheet, ChevronLeft, ChevronRight, X } from "lucide-react";
 
-// Data bawaan menggunakan format DASHBOARD DATA PPDS-WAWAN yang baru
-const sampleCSV = `;;;;;;;;
-;NIM;NAMA MAHASISWA;JENIS KELAMIN;PROVINSI;KODE PROVINSI;NIK;PRODI;KETERANGAN
-;188071501011006;dr. Nugroho Satya Parathon;Laki - Laki;JAWA TIMUR;35;3507210312880001;Anestesiologi dan Terapi Intensif;LULUS
-;198071500111001;dr. Bagas Dyakso Darmojo;Laki - Laki;JAWA TIMUR;35;3509302205860001;Anestesiologi dan Terapi Intensif;LULUS
-;178070301011001;dr. Abdul Haris;Laki - Laki;KALIMANTAN SELATAN;63;6310022112870002;Pulmonologi dan Kedokteran Respirasi;LULUS
-;198071500111004;dr. Prataganta Iradat;Laki - Laki;LAMPUNG;18;18710320010001;Anestesiologi dan Terapi Intensif;LULUS
-;259071000000000;dr. Agung Hidayatullah Syam Putra, Sp.An;Laki - Laki;DKI JAKARTA;31;3175051610810007;Subspesialis Anestesiologi dan Terapi Intensif;AKTIF
-;259070000000000;dr. Suaidi, Sp.OG;Laki - Laki;NUSA TENGGARA BARAT;52;5203051201870004;Subspesialis Obstetri dan Ginekologi;AKTIF
-;259071000000001;dr. Fajar Triwibawa, Sp.B;Perempuan;JAWA TIMUR;35;3593119296840001;Subspesialis Bedah;AKTIF`;
-
 // Fungsi untuk memproses teks CSV
 const parseCSV = (str) => {
   const lines = str.split(/\r?\n/);
   let headerIdx = -1;
   let delimiter = ",";
 
-  // Mencari baris judul tabel
+  // Mencari baris judul tabel (NIM, NAMA MAHASISWA)
   for (let i = 0; i < Math.min(300, lines.length); i++) {
     const upperLine = lines[i].toUpperCase();
     if (upperLine.includes("NIM") && (upperLine.includes("NAMA MAHASISWA") || upperLine.includes("NAMA"))) {
@@ -67,6 +56,7 @@ const parseCSV = (str) => {
         obj[h] = row[idx] || "";
       }
     });
+    // Hanya simpan data jika memiliki NIM atau Nama
     if (obj["NIM"] || obj["NAMA MAHASISWA"] || obj["NAMA"]) {
       data.push(obj);
     }
@@ -80,28 +70,50 @@ export default function App() {
   const [filterProdi, setFilterProdi] = useState("Semua");
   const [filterStatus, setFilterStatus] = useState("Semua");
   const [isClient, setIsClient] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
 
+  // MENGAMBIL DATA OTOMATIS SAAT APLIKASI DIBUKA
   useEffect(() => {
     setIsClient(true);
-    setData(parseCSV(sampleCSV));
+
+    // Perintah untuk membaca file data-ppds.csv dari folder public
+    fetch("/data-ppds.csv")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("File data-ppds.csv tidak ditemukan di folder public");
+        }
+        return response.text();
+      })
+      .then((csvText) => {
+        const parsedData = parseCSV(csvText);
+        setData(parsedData);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Gagal memuat data default:", error);
+        setIsLoading(false);
+      });
   }, []);
 
   useEffect(() => {
     setCurrentPage(1);
   }, [searchTerm, filterProdi, filterStatus, itemsPerPage]);
 
+  // Tombol Upload tetap dipertahankan jika ingin update data mendadak
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
+      setIsLoading(true);
       const reader = new FileReader();
       reader.onload = (event) => {
         const text = event.target.result;
         const parsedData = parseCSV(text);
         setData(parsedData);
         setCurrentPage(1);
+        setIsLoading(false);
       };
       reader.readAsText(file);
     }
@@ -130,6 +142,7 @@ export default function App() {
         prodiCount[d["PRODI"]] = (prodiCount[d["PRODI"]] || 0) + 1;
       }
     });
+    // Diurutkan berdasarkan Abjad A-Z
     const prodiList = Object.entries(prodiCount).sort((a, b) => a[0].localeCompare(b[0]));
 
     const provinsiCount = {};
@@ -174,7 +187,6 @@ export default function App() {
                 alt="Logo RSSA"
                 className="h-full w-full object-cover z-10"
                 onError={(e) => {
-                  // Jika file logo-rssa.png tidak ditemukan, tampilkan ikon default
                   e.target.style.display = "none";
                   document.getElementById("fallback-icon").style.display = "block";
                 }}
@@ -182,12 +194,14 @@ export default function App() {
               <Activity id="fallback-icon" className="h-6 w-6 text-indigo-600 hidden absolute" />
             </div>
 
-            <h1 className="text-xl font-bold text-gray-900">Sistem Informasi PPDS RSSA</h1>
+            <h1 className="text-xl font-bold text-gray-900 hidden sm:block">Sistem Informasi PPDS RSSA</h1>
+            <h1 className="text-xl font-bold text-gray-900 sm:hidden">SI PPDS</h1>
           </div>
           <div className="flex items-center gap-4">
             <label className="cursor-pointer bg-indigo-50 hover:bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 border border-indigo-200">
               <Upload className="w-4 h-4" />
-              Unggah Data (CSV)
+              <span className="hidden sm:inline">Unggah Data (CSV)</span>
+              <span className="sm:hidden">Upload</span>
               <input type="file" accept=".csv" className="hidden" onChange={handleFileUpload} />
             </label>
           </div>
@@ -241,213 +255,222 @@ export default function App() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center gap-4">
-            <div className="bg-blue-100 p-3 rounded-full text-blue-600">
-              <Users className="w-8 h-8" />
-            </div>
-            <div>
-              <p className="text-sm font-medium text-gray-500">Total Mahasiswa</p>
-              <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
-            </div>
+        {isLoading ? (
+          <div className="flex flex-col items-center justify-center py-20 bg-white rounded-xl shadow-sm border border-gray-100">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mb-4"></div>
+            <p className="text-gray-500 font-medium">Memuat data mahasiswa...</p>
           </div>
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center gap-4">
-            <div className="bg-green-100 p-3 rounded-full text-green-600">
-              <UserCheck className="w-8 h-8" />
+        ) : (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div className="bg-blue-100 p-3 rounded-full text-blue-600">
+                  <Users className="w-8 h-8" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-gray-500">Total Mahasiswa</p>
+                  <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div className="bg-green-100 p-3 rounded-full text-green-600">
+                  <UserCheck className="w-8 h-8" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-gray-500">Status Aktif</p>
+                  <p className="text-2xl font-bold text-gray-900">{stats.aktif}</p>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div className="bg-indigo-100 p-3 rounded-full text-indigo-600">
+                  <GraduationCap className="w-8 h-8" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-gray-500">Lulus</p>
+                  <p className="text-2xl font-bold text-gray-900">{stats.lulus}</p>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div className="bg-orange-100 p-3 rounded-full text-orange-600">
+                  <FileSpreadsheet className="w-8 h-8" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-gray-500">Program Studi</p>
+                  <p className="text-2xl font-bold text-gray-900">{stats.prodiList.length}</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <p className="text-sm font-medium text-gray-500">Status Aktif</p>
-              <p className="text-2xl font-bold text-gray-900">{stats.aktif}</p>
-            </div>
-          </div>
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center gap-4">
-            <div className="bg-indigo-100 p-3 rounded-full text-indigo-600">
-              <GraduationCap className="w-8 h-8" />
-            </div>
-            <div>
-              <p className="text-sm font-medium text-gray-500">Lulus</p>
-              <p className="text-2xl font-bold text-gray-900">{stats.lulus}</p>
-            </div>
-          </div>
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center gap-4">
-            <div className="bg-orange-100 p-3 rounded-full text-orange-600">
-              <FileSpreadsheet className="w-8 h-8" />
-            </div>
-            <div>
-              <p className="text-sm font-medium text-gray-500">Program Studi</p>
-              <p className="text-2xl font-bold text-gray-900">{stats.prodiList.length}</p>
-            </div>
-          </div>
-        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 lg:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <BookOpen className="w-5 h-5 text-indigo-500" />
-              <h2 className="text-lg font-bold text-gray-900">Sebaran Program Studi</h2>
-            </div>
-            <div className="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
-              {stats.prodiList.length > 0 ? (
-                stats.prodiList.map(([prodi, count]) => {
-                  const percentage = (count / stats.total) * 100;
-                  return (
-                    <div key={prodi} className="flex flex-col gap-1">
-                      <div className="flex justify-between text-sm">
-                        <span className="font-medium text-gray-700 truncate mr-2">{prodi}</span>
-                        <span className="text-gray-500 font-medium">{count} Orang</span>
-                      </div>
-                      <div className="w-full bg-gray-100 rounded-full h-2.5">
-                        <div className="bg-indigo-500 h-2.5 rounded-full" style={{ width: `${percentage}%` }}></div>
-                      </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 lg:col-span-2">
+                <div className="flex items-center gap-2 mb-6">
+                  <BookOpen className="w-5 h-5 text-indigo-500" />
+                  <h2 className="text-lg font-bold text-gray-900">Sebaran Program Studi</h2>
+                </div>
+                <div className="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                  {stats.prodiList.length > 0 ? (
+                    stats.prodiList.map(([prodi, count]) => {
+                      const percentage = (count / stats.total) * 100;
+                      return (
+                        <div key={prodi} className="flex flex-col gap-1">
+                          <div className="flex justify-between text-sm">
+                            <span className="font-medium text-gray-700 truncate mr-2">{prodi}</span>
+                            <span className="text-gray-500 font-medium">{count} Orang</span>
+                          </div>
+                          <div className="w-full bg-gray-100 rounded-full h-2.5">
+                            <div className="bg-indigo-500 h-2.5 rounded-full" style={{ width: `${percentage}%` }}></div>
+                          </div>
+                        </div>
+                      );
+                    })
+                  ) : (
+                    <div className="text-center text-gray-400 py-8">Tidak ada data</div>
+                  )}
+                </div>
+              </div>
+
+              <div className="space-y-6 lg:col-span-1">
+                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                  <h2 className="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Jenis Kelamin</h2>
+                  <div className="flex justify-around items-center pt-2">
+                    <div className="text-center">
+                      <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-2 text-xl font-bold">{stats.genderCount["Pria"]}</div>
+                      <span className="text-sm font-medium text-gray-600">Pria</span>
                     </div>
-                  );
-                })
-              ) : (
-                <div className="text-center text-gray-400 py-8">Tidak ada data</div>
+                    <div className="text-center">
+                      <div className="w-16 h-16 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center mx-auto mb-2 text-xl font-bold">{stats.genderCount["Wanita"]}</div>
+                      <span className="text-sm font-medium text-gray-600">Wanita</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                  <div className="flex items-center gap-2 mb-4 border-b pb-2">
+                    <MapPin className="w-5 h-5 text-red-500" />
+                    <h2 className="text-lg font-bold text-gray-900">Top 5 Provinsi Asal</h2>
+                  </div>
+                  <ul className="space-y-3">
+                    {stats.provinsiList.length > 0 ? (
+                      stats.provinsiList.map(([provinsi, count], idx) => (
+                        <li key={provinsi} className="flex justify-between items-center text-sm">
+                          <span className="flex items-center gap-2">
+                            <span className="text-gray-400 font-mono">{idx + 1}.</span>
+                            <span className="font-medium text-gray-700">{provinsi}</span>
+                          </span>
+                          <span className="bg-gray-100 text-gray-600 py-1 px-2 rounded-md font-medium">{count}</span>
+                        </li>
+                      ))
+                    ) : (
+                      <div className="text-center text-gray-400 py-4">Tidak ada data</div>
+                    )}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+              <div className="p-6 border-b border-gray-200 flex justify-between items-center bg-gray-50/50">
+                <div>
+                  <h2 className="text-lg font-bold text-gray-900">Data Rinci Mahasiswa</h2>
+                  <p className="text-sm text-gray-500 mt-1">Menampilkan data berdasarkan filter yang dipilih</p>
+                </div>
+                <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm font-semibold rounded-full">Total: {filteredData.length}</span>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-gray-50 text-gray-600 text-xs uppercase tracking-wider border-b border-gray-200">
+                      <th className="p-4 font-semibold">NIM</th>
+                      <th className="p-4 font-semibold">Nama Mahasiswa</th>
+                      <th className="p-4 font-semibold">Program Studi</th>
+                      <th className="p-4 font-semibold hidden md:table-cell">Gender</th>
+                      <th className="p-4 font-semibold hidden lg:table-cell">Provinsi</th>
+                      <th className="p-4 font-semibold text-center">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-sm divide-y divide-gray-100">
+                    {currentTableData.length > 0 ? (
+                      currentTableData.map((row, idx) => (
+                        <tr key={idx} className="hover:bg-gray-50 transition-colors">
+                          <td className="p-4 font-medium text-gray-900">{row["NIM"]}</td>
+                          <td className="p-4 text-gray-700 font-medium">{row["NAMA MAHASISWA"]}</td>
+                          <td className="p-4 text-gray-600">{row["PRODI"]}</td>
+                          <td className="p-4 text-gray-600 hidden md:table-cell">{row["JENIS KELAMIN"]?.toUpperCase().includes("LAKI") || row["JENIS KELAMIN"] === "L" ? "Pria" : "Wanita"}</td>
+                          <td className="p-4 text-gray-600 hidden lg:table-cell">{row["PROVINSI"]}</td>
+                          <td className="p-4 text-center">
+                            <span
+                              className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                                (row["KETERANGAN"] || "").trim().toUpperCase() === "AKTIF"
+                                  ? "bg-green-100 text-green-700"
+                                  : (row["KETERANGAN"] || "").trim().toUpperCase() === "LULUS"
+                                    ? "bg-indigo-100 text-indigo-700"
+                                    : "bg-gray-100 text-gray-700"
+                              }`}
+                            >
+                              {row["KETERANGAN"] || "-"}
+                            </span>
+                          </td>
+                        </tr>
+                      ))
+                    ) : (
+                      <tr>
+                        <td colSpan="6" className="p-8 text-center text-gray-500">
+                          Tidak ada data yang ditemukan
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+
+              {filteredData.length > 0 && (
+                <div className="p-4 flex flex-col sm:flex-row items-center justify-between bg-white border-t border-gray-100 gap-4">
+                  <div className="flex flex-col sm:flex-row items-center gap-4">
+                    <span className="text-sm text-gray-600">
+                      Menampilkan <span className="font-semibold">{(currentPage - 1) * itemsPerPage + 1}</span> - <span className="font-semibold">{Math.min(currentPage * itemsPerPage, filteredData.length)}</span> dari{" "}
+                      <span className="font-semibold">{filteredData.length}</span> data
+                    </span>
+
+                    <div className="flex items-center gap-2 border-l border-gray-200 pl-4">
+                      <span className="text-sm text-gray-600">Tampilkan:</span>
+                      <select
+                        value={itemsPerPage}
+                        onChange={(e) => setItemsPerPage(Number(e.target.value))}
+                        className="border border-gray-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-gray-50 hover:bg-white transition-colors cursor-pointer"
+                      >
+                        <option value={10}>10</option>
+                        <option value={25}>25</option>
+                        <option value={50}>50</option>
+                        <option value={100}>100</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+                      disabled={currentPage === 1}
+                      className="px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1 font-medium text-gray-700 transition-colors"
+                    >
+                      <ChevronLeft className="w-4 h-4" /> Sebelumnya
+                    </button>
+                    <div className="flex items-center px-3 text-sm font-medium text-gray-600 bg-gray-50 rounded-md border border-gray-100">
+                      {currentPage} / {totalPages}
+                    </div>
+                    <button
+                      onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
+                      disabled={currentPage === totalPages || totalPages === 0}
+                      className="px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1 font-medium text-gray-700 transition-colors"
+                    >
+                      Selanjutnya <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
               )}
             </div>
-          </div>
-
-          <div className="space-y-6 lg:col-span-1">
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <h2 className="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Jenis Kelamin</h2>
-              <div className="flex justify-around items-center pt-2">
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-2 text-xl font-bold">{stats.genderCount["Pria"]}</div>
-                  <span className="text-sm font-medium text-gray-600">Pria</span>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center mx-auto mb-2 text-xl font-bold">{stats.genderCount["Wanita"]}</div>
-                  <span className="text-sm font-medium text-gray-600">Wanita</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <div className="flex items-center gap-2 mb-4 border-b pb-2">
-                <MapPin className="w-5 h-5 text-red-500" />
-                <h2 className="text-lg font-bold text-gray-900">Top 5 Provinsi Asal</h2>
-              </div>
-              <ul className="space-y-3">
-                {stats.provinsiList.length > 0 ? (
-                  stats.provinsiList.map(([provinsi, count], idx) => (
-                    <li key={provinsi} className="flex justify-between items-center text-sm">
-                      <span className="flex items-center gap-2">
-                        <span className="text-gray-400 font-mono">{idx + 1}.</span>
-                        <span className="font-medium text-gray-700">{provinsi}</span>
-                      </span>
-                      <span className="bg-gray-100 text-gray-600 py-1 px-2 rounded-md font-medium">{count}</span>
-                    </li>
-                  ))
-                ) : (
-                  <div className="text-center text-gray-400 py-4">Tidak ada data</div>
-                )}
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-          <div className="p-6 border-b border-gray-200 flex justify-between items-center bg-gray-50/50">
-            <div>
-              <h2 className="text-lg font-bold text-gray-900">Data Rinci Mahasiswa</h2>
-              <p className="text-sm text-gray-500 mt-1">Menampilkan data berdasarkan filter yang dipilih</p>
-            </div>
-            <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm font-semibold rounded-full">Total: {filteredData.length}</span>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-gray-50 text-gray-600 text-xs uppercase tracking-wider border-b border-gray-200">
-                  <th className="p-4 font-semibold">NIM</th>
-                  <th className="p-4 font-semibold">Nama Mahasiswa</th>
-                  <th className="p-4 font-semibold">Program Studi</th>
-                  <th className="p-4 font-semibold hidden md:table-cell">Gender</th>
-                  <th className="p-4 font-semibold hidden lg:table-cell">Provinsi</th>
-                  <th className="p-4 font-semibold text-center">Status</th>
-                </tr>
-              </thead>
-              <tbody className="text-sm divide-y divide-gray-100">
-                {currentTableData.length > 0 ? (
-                  currentTableData.map((row, idx) => (
-                    <tr key={idx} className="hover:bg-gray-50 transition-colors">
-                      <td className="p-4 font-medium text-gray-900">{row["NIM"]}</td>
-                      <td className="p-4 text-gray-700 font-medium">{row["NAMA MAHASISWA"]}</td>
-                      <td className="p-4 text-gray-600">{row["PRODI"]}</td>
-                      <td className="p-4 text-gray-600 hidden md:table-cell">{row["JENIS KELAMIN"]?.toUpperCase().includes("LAKI") || row["JENIS KELAMIN"] === "L" ? "Pria" : "Wanita"}</td>
-                      <td className="p-4 text-gray-600 hidden lg:table-cell">{row["PROVINSI"]}</td>
-                      <td className="p-4 text-center">
-                        <span
-                          className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                            (row["KETERANGAN"] || "").trim().toUpperCase() === "AKTIF"
-                              ? "bg-green-100 text-green-700"
-                              : (row["KETERANGAN"] || "").trim().toUpperCase() === "LULUS"
-                                ? "bg-indigo-100 text-indigo-700"
-                                : "bg-gray-100 text-gray-700"
-                          }`}
-                        >
-                          {row["KETERANGAN"] || "-"}
-                        </span>
-                      </td>
-                    </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan="6" className="p-8 text-center text-gray-500">
-                      Tidak ada data yang ditemukan
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-
-          {filteredData.length > 0 && (
-            <div className="p-4 flex flex-col sm:flex-row items-center justify-between bg-white border-t border-gray-100 gap-4">
-              <div className="flex flex-col sm:flex-row items-center gap-4">
-                <span className="text-sm text-gray-600">
-                  Menampilkan <span className="font-semibold">{(currentPage - 1) * itemsPerPage + 1}</span> - <span className="font-semibold">{Math.min(currentPage * itemsPerPage, filteredData.length)}</span> dari{" "}
-                  <span className="font-semibold">{filteredData.length}</span> data
-                </span>
-
-                <div className="flex items-center gap-2 border-l border-gray-200 pl-4">
-                  <span className="text-sm text-gray-600">Tampilkan:</span>
-                  <select
-                    value={itemsPerPage}
-                    onChange={(e) => setItemsPerPage(Number(e.target.value))}
-                    className="border border-gray-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-gray-50 hover:bg-white transition-colors cursor-pointer"
-                  >
-                    <option value={10}>10</option>
-                    <option value={25}>25</option>
-                    <option value={50}>50</option>
-                    <option value={100}>100</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="flex gap-2">
-                <button
-                  onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
-                  disabled={currentPage === 1}
-                  className="px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1 font-medium text-gray-700 transition-colors"
-                >
-                  <ChevronLeft className="w-4 h-4" /> Sebelumnya
-                </button>
-                <div className="flex items-center px-3 text-sm font-medium text-gray-600 bg-gray-50 rounded-md border border-gray-100">
-                  {currentPage} / {totalPages}
-                </div>
-                <button
-                  onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
-                  disabled={currentPage === totalPages || totalPages === 0}
-                  className="px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1 font-medium text-gray-700 transition-colors"
-                >
-                  Selanjutnya <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
+          </>
+        )}
       </main>
 
       <style
