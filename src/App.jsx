@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Upload, Users, UserCheck, GraduationCap, MapPin, BookOpen, Search, Activity, FileSpreadsheet, ChevronLeft, ChevronRight, X } from "lucide-react";
 
-// Data contoh berdasarkan format lembar kerja
-const sampleCSV = `NO,NIM,NAMA MAHASISWA,JENIS KELAMIN,SEMESTER,MASUK,TEMPAT LAHIR,PROVINSI,TANGGAL LAHIR,SIMPP,PERIODE TGL SIMPP,SPT DIREKTUR,PERIODE TGL SPT DIREKTUR,VIEW SIP & STR,SIP,STR,BERLAKU,PENYERAHAN SIP,KODE PROVINSI,NIK,ALAMAT,NO.REK,NO. TELP,NPWP,PRODI,IZIN BELAJAR / TUGAS BELAJAR,KETERANGAN,TGL. MENINGGAL,UPDATE,TGL POSITIF,POSITIF
-1,188071501011006,dr. Nugroho Satya Parathon,Laki - Laki,14,1 January 2019,MALANG,JAWA TIMUR,3 December 1988,SUDAH ADA FILE,18/08/2020,-,,SUDAH ADA FILE,440.03,3511,Selama Mengikuti PPDS,,35,3507,"Jl diponegoro",004,0822,55.5,Anestesiologi dan Terapi Intensif,,LULUS,,,,
-2,259070500011001,"dr. Andy Nuransyah, Sp.B",Laki - Laki,2,1 January 2026,Cilacap,JAWA TENGAH,16 August 1979,-,,-,,BELUM ADA FILE,,,,,35,3573,"Perum Pondok",,0812,,Subspesialis Bedah,,AKTIF,,,,
-3,258072700011001,dr. Asfarina Prihandini,Perempuan,2,1 January 2026,Malang,JAWA TIMUR,10 April 1994,SUDAH ADA FILE,25 Mei 2026,SUDAH ADA FILE,25 Mei 2026,SUDAH ADA FILE,MK01,HY00,Selama masa pendidikan,13/04/2026,35,3573,"Dsn Sidorejo",,0896,,Kedokteran Jiwa,,AKTIF,,,,
-4,248071700111005,dr. Claudya Sefalda Cahyani,Perempuan,4,1 July 2024,Surabaya,JAWA TIMUR,12 May 1995,-,,-,,BELUM ADA FILE,,,,,35,3578,"Jl Mawar",,0856,,Kedokteran Fisik dan Rehabilitasi,,AKTIF,,,,
-5,258072000011004,dr. Asyam Syafiq Hasbullah,Laki - Laki,2,1 January 2026,Jakarta,DKI JAKARTA,5 June 1996,-,,-,,BELUM ADA FILE,,,,,31,3172,"Jl Sudirman",,0811,,Urologi,,AKTIF,,,,
-6,208070200011001,dr. Budi Santoso,Laki - Laki,10,1 July 2020,Bandung,JAWA BARAT,10 October 1990,SUDAH ADA FILE,10/10/2020,-,,SUDAH ADA FILE,112,223,Selama Pendidikan,,32,3273,"Jl Asia Afrika",,0813,,Ilmu Penyakit Dalam,,LULUS,,,,
-7,238071500011001,dr. Citra Lestari,Perempuan,6,1 January 2023,Denpasar,BALI,15 March 1993,SUDAH ADA FILE,15/03/2023,-,,SUDAH ADA FILE,441,552,Selama Pendidikan,,51,5171,"Jl Raya Puputan",,0819,,Anestesiologi dan Terapi Intensif,,AKTIF,,,,`;
+// Data bawaan menggunakan format DASHBOARD DATA PPDS-WAWAN yang baru
+const sampleCSV = `;;;;;;;;
+;NIM;NAMA MAHASISWA;JENIS KELAMIN;PROVINSI;KODE PROVINSI;NIK;PRODI;KETERANGAN
+;188071501011006;dr. Nugroho Satya Parathon;Laki - Laki;JAWA TIMUR;35;3507210312880001;Anestesiologi dan Terapi Intensif;LULUS
+;198071500111001;dr. Bagas Dyakso Darmojo;Laki - Laki;JAWA TIMUR;35;3509302205860001;Anestesiologi dan Terapi Intensif;LULUS
+;178070301011001;dr. Abdul Haris;Laki - Laki;KALIMANTAN SELATAN;63;6310022112870002;Pulmonologi dan Kedokteran Respirasi;LULUS
+;198071500111004;dr. Prataganta Iradat;Laki - Laki;LAMPUNG;18;18710320010001;Anestesiologi dan Terapi Intensif;LULUS
+;259071000000000;dr. Agung Hidayatullah Syam Putra, Sp.An;Laki - Laki;DKI JAKARTA;31;3175051610810007;Subspesialis Anestesiologi dan Terapi Intensif;AKTIF
+;259070000000000;dr. Suaidi, Sp.OG;Laki - Laki;NUSA TENGGARA BARAT;52;5203051201870004;Subspesialis Obstetri dan Ginekologi;AKTIF
+;259071000000001;dr. Fajar Triwibawa, Sp.B;Perempuan;JAWA TIMUR;35;3593119296840001;Subspesialis Bedah;AKTIF`;
 
 // Fungsi untuk memproses teks CSV
 const parseCSV = (str) => {
@@ -165,11 +166,23 @@ export default function App() {
     <div className="min-h-screen bg-gray-50 text-slate-800 font-sans pb-12">
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="bg-indigo-600 p-2 rounded-lg">
-              <Activity className="h-5 w-5 text-white" />
+          <div className="flex items-center gap-3">
+            {/* Tempat Logo RSSA */}
+            <div className="h-10 w-10 bg-white rounded-full flex items-center justify-center overflow-hidden border border-gray-200 shadow-sm relative">
+              <img
+                src="/logo-rssa.png"
+                alt="Logo RSSA"
+                className="h-full w-full object-cover z-10"
+                onError={(e) => {
+                  // Jika file logo-rssa.png tidak ditemukan, tampilkan ikon default
+                  e.target.style.display = "none";
+                  document.getElementById("fallback-icon").style.display = "block";
+                }}
+              />
+              <Activity id="fallback-icon" className="h-6 w-6 text-indigo-600 hidden absolute" />
             </div>
-            <h1 className="text-xl font-bold text-gray-900">Sistem Informasi PPDS</h1>
+
+            <h1 className="text-xl font-bold text-gray-900">Sistem Informasi PPDS RSSA</h1>
           </div>
           <div className="flex items-center gap-4">
             <label className="cursor-pointer bg-indigo-50 hover:bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 border border-indigo-200">
