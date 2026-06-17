@@ -2,13 +2,13 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { 
   Upload, 
   Users, 
-  UserCheck, 
-  GraduationCap, 
-  MapPin, 
-  BookOpen, 
+  HeartPulse, 
+  Award, 
+  Map, 
+  PieChart, 
   Search, 
-  Activity,
-  FileSpreadsheet,
+  Stethoscope,
+  Library,
   ChevronLeft,
   ChevronRight,
   X 
@@ -200,11 +200,11 @@ export default function App() {
                    document.getElementById('fallback-icon').style.display = 'block';
                  }}
                />
-               <Activity id="fallback-icon" className="h-6 w-6 text-indigo-600 hidden absolute" />
+               <Stethoscope id="fallback-icon" className="h-6 w-6 text-indigo-600 hidden absolute" />
             </div>
 
             <h1 className="text-xl font-bold text-gray-900 hidden sm:block">Sistem Informasi PPDS RSSA</h1>
-            <h1 className="text-xl font-bold text-gray-900 sm:hidden">SI PPDS RSSA</h1>
+            <h1 className="text-xl font-bold text-gray-900 sm:hidden">Sistem Informasi PPDS RSSA</h1>
           </div>
           <div className="flex items-center gap-4">
             {/* Tombol Unggah Data disembunyikan sesuai permintaan */}
@@ -224,7 +224,6 @@ export default function App() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-6">
         
-        {}
         <div className="flex flex-col md:flex-row gap-4 justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100">
           <div className="relative w-full md:w-96">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -283,7 +282,7 @@ export default function App() {
           </div>
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center gap-4">
             <div className="bg-green-100 p-3 rounded-full text-green-600">
-              <UserCheck className="w-8 h-8" />
+              <HeartPulse className="w-8 h-8" />
             </div>
             <div>
               <p className="text-sm font-medium text-gray-500">Status Aktif</p>
@@ -292,7 +291,7 @@ export default function App() {
           </div>
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center gap-4">
             <div className="bg-indigo-100 p-3 rounded-full text-indigo-600">
-              <GraduationCap className="w-8 h-8" />
+              <Award className="w-8 h-8" />
             </div>
             <div>
               <p className="text-sm font-medium text-gray-500">Lulus</p>
@@ -301,7 +300,7 @@ export default function App() {
           </div>
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center gap-4">
             <div className="bg-orange-100 p-3 rounded-full text-orange-600">
-              <FileSpreadsheet className="w-8 h-8" />
+              <Library className="w-8 h-8" />
             </div>
             <div>
               <p className="text-sm font-medium text-gray-500">Program Studi</p>
@@ -310,11 +309,10 @@ export default function App() {
           </div>
         </div>
 
-        {}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 lg:col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <BookOpen className="w-5 h-5 text-indigo-500" />
+              <PieChart className="w-5 h-5 text-indigo-500" />
               <h2 className="text-lg font-bold text-gray-900">Sebaran Program Studi</h2>
             </div>
             <div className="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
@@ -361,7 +359,7 @@ export default function App() {
 
             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
               <div className="flex items-center gap-2 mb-4 border-b pb-2">
-                <MapPin className="w-5 h-5 text-red-500" />
+                <Map className="w-5 h-5 text-red-500" />
                 <h2 className="text-lg font-bold text-gray-900">Top 5 Provinsi Asal</h2>
               </div>
               <ul className="space-y-3">
@@ -381,7 +379,6 @@ export default function App() {
           </div>
         </div>
 
-        {}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="p-6 border-b border-gray-200 flex justify-between items-center bg-gray-50/50">
             <div>
