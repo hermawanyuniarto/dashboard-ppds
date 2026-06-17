@@ -231,8 +231,8 @@ export default function App() {
                <Stethoscope id="fallback-icon" className="h-6 w-6 text-indigo-600 hidden absolute" />
             </div>
 
-            <h1 className="text-xl font-bold text-gray-900 hidden sm:block">Sistem Informasi PPDS RSSA</h1>
-            <h1 className="text-xl font-bold text-gray-900 sm:hidden">Sistem Informasi PPDS RSSA</h1>
+            <h1 className="text-xl font-bold text-gray-900 hidden sm:block">Sistem Informasi PPDS, PPDSS RSSA</h1>
+            <h1 className="text-xl font-bold text-gray-900 sm:hidden">Sistem Informasi PPDS, PPDSS RSSA</h1>
           </div>
           <div className="flex items-center gap-4">
             {/* Tombol Unggah Data disembunyikan sesuai permintaan */}
@@ -341,7 +341,7 @@ export default function App() {
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 lg:col-span-2">
             <div className="flex items-center gap-2 mb-6">
               <PieChart className="w-5 h-5 text-indigo-500" />
-              <h2 className="text-lg font-bold text-gray-900">Sebaran Program Studi</h2>
+              <h2 className="text-lg font-bold text-gray-900">Program Studi</h2>
             </div>
             <div className="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
               {stats.prodiList.length > 0 ? stats.prodiList.map(([prodi, count]) => {
