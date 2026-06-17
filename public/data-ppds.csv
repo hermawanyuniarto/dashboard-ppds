@@ -9,8 +9,8 @@ NIM;NAMA MAHASISWA;JENIS KELAMIN;PROVINSI;KODE PROVINSI;NIK;PRODI;KETERANGAN
 258071500111002;dr. Carlo Prawira Azali;Laki - Laki;SUMATERA BARAT;13;1371032803950002;Anestesiologi dan Terapi Intensif;AKTIF
 258071500111006;dr. Christopher Edwin Marijono;Laki - Laki;JAWA TIMUR;35;3578202112910004;Anestesiologi dan Terapi Intensif;AKTIF
 258071500111008;dr. Decky Aditya Zulkarnaen;Laki - Laki;NUSA TENGGARA BARAT;52;5271011104900005;Anestesiologi dan Terapi Intensif;AKTIF
-238071500111001;dr. Dessy Kusumadewi;Perempuan;JAWA TIMUR;35;3526015512880010;Anestesiologi dan Terapi Intensif;AKTIF
-238071500111001;dr. Dhoni Dasagusta;Laki - Laki;JAWA TIMUR;35;3573041008940002;Anestesiologi dan Terapi Intensif;AKTIF
+238071500111003;dr. Dessy Kusumadewi;Perempuan;JAWA TIMUR;35;3526015512880010;Anestesiologi dan Terapi Intensif;AKTIF
+238071500111005;dr. Dhoni Dasagusta;Laki - Laki;JAWA TIMUR;35;3573041008940002;Anestesiologi dan Terapi Intensif;AKTIF
 248071500011003;dr. Dio Resna Oktavinanda;Laki - Laki;JAWA TIMUR;35;3509121810950003;Anestesiologi dan Terapi Intensif;AKTIF
 228071500011003;dr. Ella Priliandini;Perempuan;ACEH;11;1106075704930004;Anestesiologi dan Terapi Intensif;AKTIF
 248071500011001;dr. Faisal Shaldy;Laki - Laki;PAPUA;91;9171020502940007;Anestesiologi dan Terapi Intensif;AKTIF
@@ -18,7 +18,7 @@ NIM;NAMA MAHASISWA;JENIS KELAMIN;PROVINSI;KODE PROVINSI;NIK;PRODI;KETERANGAN
 238071500011002;dr. Fajar Tri Mudianto;Laki - Laki;JAWA TENGAH;33;3301021912950001;Anestesiologi dan Terapi Intensif;AKTIF
 228071500011004;dr. Fathimah Azzahra;Perempuan;BANTEN;36;3674046505960006;Anestesiologi dan Terapi Intensif;AKTIF
 248071500011008;dr. Fendy Dwija Pradikta;Laki - Laki;JAWA TIMUR;35;3579022101890002;Anestesiologi dan Terapi Intensif;AKTIF
-238071500111001;dr. Firdaus Luke Nugraha;Laki - Laki;DKI JAKARTA;31;3173042304920001;Anestesiologi dan Terapi Intensif;AKTIF
+238071500111004;dr. Firdaus Luke Nugraha;Laki - Laki;DKI JAKARTA;31;3173042304920001;Anestesiologi dan Terapi Intensif;AKTIF
 258071500011003;dr. Firman Ichlasul Amal;Laki - Laki;JAWA TIMUR;35;3515110111960003;Anestesiologi dan Terapi Intensif;AKTIF
 258071500011004;dr. Ifran;Laki - Laki;NUSA TENGGARA BARAT;52;5206031805891002;Anestesiologi dan Terapi Intensif;AKTIF
 238071500011003;dr. Ilham Ramadhana;Laki - Laki;JAWA TIMUR;35;3515150602950001;Anestesiologi dan Terapi Intensif;AKTIF
@@ -39,12 +39,12 @@ NIM;NAMA MAHASISWA;JENIS KELAMIN;PROVINSI;KODE PROVINSI;NIK;PRODI;KETERANGAN
 238071500011001;dr. Rahmad Dwi Saputra;Laki - Laki;LAMPUNG;18;1871050402950006;Anestesiologi dan Terapi Intensif;AKTIF
 228071500111003;dr. Reza Ariestyawan Ramadhan;Laki - Laki;PAPUA;91;9101012603910004;Anestesiologi dan Terapi Intensif;AKTIF
 258071500011002;dr. Reza Rachmantoko;Laki - Laki;JAWA TIMUR;35;3507250511980006;Anestesiologi dan Terapi Intensif;AKTIF
-238071500111001;dr. Rizqi Bagus Setyo Prawiro;Laki - Laki;NUSA TENGGARA BARAT;52;5271030911950002;Anestesiologi dan Terapi Intensif;AKTIF
+238071500111006;dr. Rizqi Bagus Setyo Prawiro;Laki - Laki;NUSA TENGGARA BARAT;52;5271030911950002;Anestesiologi dan Terapi Intensif;AKTIF
 228071500011002;dr. Rofiudin Ali;Laki - Laki;NUSA TENGGARA TIMUR;53;5371042402940006;Anestesiologi dan Terapi Intensif;AKTIF
 228071500111005;dr. Sahala Trident Sitorus;Laki - Laki;PAPUA BARAT;92;9271010909900003;Anestesiologi dan Terapi Intensif;AKTIF
 258071500011005;dr. Salma Maha Rhani Syilvia Oktaviany;Perempuan;JAWA TIMUR;35;3573046310970010;Anestesiologi dan Terapi Intensif;AKTIF
 238071500111001;dr. Sulistiyawati;Perempuan;JAWA TIMUR;35;3528046105910002;Anestesiologi dan Terapi Intensif;AKTIF
-238071500111001;dr. Sutan Malik Maulana Syah;Laki - Laki;DKI JAKARTA;31;3174023009900001;Anestesiologi dan Terapi Intensif;AKTIF
+238071500111002;dr. Sutan Malik Maulana Syah;Laki - Laki;DKI JAKARTA;31;3174023009900001;Anestesiologi dan Terapi Intensif;AKTIF
 228071500111006;dr. Veva Wulandari;Perempuan;KALIMANTAN BARAT;61;6104124703880002;Anestesiologi dan Terapi Intensif;AKTIF
 258071500111007;dr. Vigyan Dananjaya;Laki - Laki;JAWA TIMUR;35;3573032104980001;Anestesiologi dan Terapi Intensif;AKTIF
 248071500011007;dr. Wangga Pramono Lasandara;Laki - Laki;SULAWESI TENGGARA;74;7402031410920001;Anestesiologi dan Terapi Intensif;AKTIF
@@ -57,7 +57,7 @@ NIM;NAMA MAHASISWA;JENIS KELAMIN;PROVINSI;KODE PROVINSI;NIK;PRODI;KETERANGAN
 238072500111001;dr. Maria Karina Jaya Suwana;Perempuan;JAWA TIMUR;35;3507055603960001;Bedah Plastik Rekonstruksi dan Estetik;AKTIF
 258072500111003;dr. Marina Tandarto;Perempuan;KALIMANTAN TIMUR;64;6472046101000001;Bedah Plastik Rekonstruksi dan Estetik;AKTIF
 248072500111002;dr. Michele Gondokesumo;Perempuan;JAWA TIMUR;35;3578094304940003;Bedah Plastik Rekonstruksi dan Estetik;AKTIF
-248072500011002;dr. Mutiara Aprilia Senolinggi;Perempuan;PAPUA BARAT;92;9271056404930002;Bedah Plastik Rekonstruksi dan Estetik;AKTIF
+248072500011001;dr. Mutiara Aprilia Senolinggi;Perempuan;PAPUA BARAT;92;9271056404930002;Bedah Plastik Rekonstruksi dan Estetik;AKTIF
 258072500111002;dr. Riestya Arum Pemata;Perempuan;JAWA TIMUR;35;3573034408950005;Bedah Plastik Rekonstruksi dan Estetik;AKTIF
 238072500011001;dr. Rr. Theodora Ratih Labdagati Iswara;Perempuan;JAWA TENGAH;33;3372055811890003;Bedah Plastik Rekonstruksi dan Estetik;AKTIF
 258072500011001;dr. Siti Farahhiyah Dwi Mubarani;Perempuan;SUMATERA SELATAN;16;1671066705960013;Bedah Plastik Rekonstruksi dan Estetik;AKTIF
@@ -113,7 +113,7 @@ NIM;NAMA MAHASISWA;JENIS KELAMIN;PROVINSI;KODE PROVINSI;NIK;PRODI;KETERANGAN
 228070100011001;dr. Fazlur Risyad Laochi;Laki - Laki;JAWA TIMUR;35;3505170903950001;Ilmu Bedah;AKTIF
 258070100111001;dr. Geovan Hananto;Laki - Laki;JAWA TIMUR;35;3573052007980006;Ilmu Bedah;AKTIF
 238070100111003;dr. Goustaf Pandy Hatta;Laki - Laki;JAWA TENGAH;33;3323070207940004;Ilmu Bedah;AKTIF
-228070100111005;dr. Hanif Yusroni;Laki - Laki;JAWA TIMUR;35;3502161707950001;Ilmu Bedah;AKTIF
+228070100011005;dr. Hanif Yusroni;Laki - Laki;JAWA TIMUR;35;3502161707950001;Ilmu Bedah;AKTIF
 218070100111008;dr. Hari Sudrajat;Laki - Laki;JAWA TIMUR;35;3578220903890003;Ilmu Bedah;AKTIF
 218070100111003;dr. IBRAHIM YUSUF NASUTON;Laki - Laki;SUMATERA UTARA;12;1209201306900005;Ilmu Bedah;AKTIF
 258070100111002;dr. Imam Faiq Habibur Rohman;Laki - Laki;JAWA TIMUR;35;3511110707920003;Ilmu Bedah;AKTIF
@@ -136,13 +136,13 @@ NIM;NAMA MAHASISWA;JENIS KELAMIN;PROVINSI;KODE PROVINSI;NIK;PRODI;KETERANGAN
 258070100011004;dr. Ramot Arif Banamtuan;Laki - Laki;NUSA TENGGARA TIMUR;53;5302012804930003;Ilmu Bedah;AKTIF
 238070100111001 ;dr. Riz'Q Threevisca Chriswantara;Laki - Laki;JAWA TIMUR;35;3515080905970005;Ilmu Bedah;AKTIF
 218070100111002;dr. Sabrinadia Hanareta Hantoko;Perempuan;JAWA TIMUR;35;3573046212940007;Ilmu Bedah;AKTIF
-228070100111002;dr. Satria Candra Kusuma;Laki - Laki;JAWA TIMUR;35;3506021805890001;Ilmu Bedah;AKTIF
+228070100011002;dr. Satria Candra Kusuma;Laki - Laki;JAWA TIMUR;35;3506021805890001;Ilmu Bedah;AKTIF
 238070100111002;dr. Sebastian Ahmad;Laki - Laki;JAWA TIMUR;35;3573021407960005;Ilmu Bedah;AKTIF
 258070100011001;dr. Sekar Ayu Kinanti;Perempuan;JAWA BARAT;32;3201294707970008;Ilmu Bedah;AKTIF
 248070100011004;dr. Sely Maks;Perempuan;SUMATERA UTARA;12;1271054908940005;Ilmu Bedah;AKTIF
 258070100011003;dr. Septian Iqbal Mirzaqom;Laki - Laki;JAWA TIMUR;35;3507211209940001;Ilmu Bedah;AKTIF
 248070100111001;dr. Shafri Nahdi;Laki - Laki;JAWA TENGAH;33;3327120111910005;Ilmu Bedah;AKTIF
-228070100111003;dr. Soviana Mahdiyaksa;Perempuan;JAWA TIMUR;35;3578096806890003;Ilmu Bedah;AKTIF
+228070100011003;dr. Soviana Mahdiyaksa;Perempuan;JAWA TIMUR;35;3578096806890003;Ilmu Bedah;AKTIF
 248070100011003;dr. Tea Karina Sudharso;Perempuan;JAWA TENGAH;33;3374114904970001;Ilmu Bedah;AKTIF
 228070100111008;dr. Teuku Harmawansyah;Laki - Laki;ACEH;11;1171032407920001;Ilmu Bedah;AKTIF
 228070100011004;dr. Wahju Sigit Tjahjono Putro;Laki - Laki;JAWA TENGAH;33;3371021411920001;Ilmu Bedah;AKTIF
