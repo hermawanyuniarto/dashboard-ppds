@@ -207,7 +207,8 @@ export default function App() {
             <h1 className="text-xl font-bold text-gray-900 sm:hidden">SI PPDS RSSA</h1>
           </div>
           <div className="flex items-center gap-4">
-            <label className="cursor-pointer bg-indigo-50 hover:bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 border border-indigo-200">
+            {/* Tombol Unggah Data disembunyikan sesuai permintaan */}
+            <label className="hidden cursor-pointer bg-indigo-50 hover:bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 border border-indigo-200">
               <Upload className="w-4 h-4 hidden sm:block" />
               Unggah Data (CSV)
               <input 
