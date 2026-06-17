@@ -87,6 +87,34 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10); 
 
+  // --- FITUR KEAMANAN: Mencegah Inspect Element ---
+  useEffect(() => {
+    // Mencegah Klik Kanan
+    const handleContextMenu = (e) => e.preventDefault(); 
+    
+    // Mencegah tombol pintasan (shortcut) keyboard
+    const handleKeyDown = (e) => {
+      if (
+        e.keyCode === 123 || // Tombol F12
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) || // Ctrl+Shift+I/J/C
+        (e.ctrlKey && (e.key === 'U' || e.key === 'u')) // Ctrl+U (Lihat Source)
+      ) {
+        e.preventDefault();
+      }
+    };
+    
+    // Pasang pelindung saat aplikasi dimuat
+    document.addEventListener('contextmenu', handleContextMenu);
+    document.addEventListener('keydown', handleKeyDown);
+    
+    // Lepas pelindung saat aplikasi ditutup
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+  // ------------------------------------------------
+
   useEffect(() => {
     setIsClient(true);
     // Memuat data secara otomatis dari folder public (jika file data-ppds.csv ada)
