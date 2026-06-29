@@ -11,7 +11,8 @@ import {
   Library,
   ChevronLeft,
   ChevronRight,
-  X 
+  X,
+  Printer // Tambahan ikon untuk tombol cetak
 } from 'lucide-react';
 
 // Fungsi untuk memproses teks CSV
@@ -80,7 +81,7 @@ export default function App() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterProdi, setFilterProdi] = useState("Semua");
-  // Filter status diset "AKTIF" sebagai default bawaan (standby)
+  // Filter status diset "AKTIF" sebagai default bawaan
   const [filterStatus, setFilterStatus] = useState("AKTIF"); 
   const [isClient, setIsClient] = useState(false);
   
@@ -89,10 +90,8 @@ export default function App() {
 
   // --- FITUR KEAMANAN: Mencegah Inspect Element ---
   useEffect(() => {
-    // Mencegah Klik Kanan
     const handleContextMenu = (e) => e.preventDefault(); 
     
-    // Mencegah tombol pintasan (shortcut) keyboard
     const handleKeyDown = (e) => {
       if (
         e.keyCode === 123 || // Tombol F12
@@ -103,11 +102,9 @@ export default function App() {
       }
     };
     
-    // Pasang pelindung saat aplikasi dimuat
     document.addEventListener('contextmenu', handleContextMenu);
     document.addEventListener('keydown', handleKeyDown);
     
-    // Lepas pelindung saat aplikasi ditutup
     return () => {
       document.removeEventListener('contextmenu', handleContextMenu);
       document.removeEventListener('keydown', handleKeyDown);
@@ -117,7 +114,7 @@ export default function App() {
 
   useEffect(() => {
     setIsClient(true);
-    // Memuat data secara otomatis dari folder public (jika file data-ppds.csv ada)
+    // Memuat data secara otomatis dari folder public
     fetch('/data-ppds.csv')
       .then(response => {
         if (!response.ok) throw new Error("File tidak ditemukan");
@@ -149,13 +146,17 @@ export default function App() {
     }
   };
 
+  // Fungsi untuk memicu dialog print bawaan browser
+  const handlePrint = () => {
+    window.print();
+  };
+
   const filteredData = useMemo(() => {
     return data.filter(item => {
       const matchSearch = (item['NAMA MAHASISWA']?.toLowerCase().includes(searchTerm.toLowerCase()) || 
                            item['NIM']?.toLowerCase().includes(searchTerm.toLowerCase()));
       const matchProdi = filterProdi === "Semua" || item['PRODI'] === filterProdi;
       
-      // Menyesuaikan format teks saat memfilter status
       const itemStatus = (item['KETERANGAN'] || '').trim().toUpperCase();
       const matchStatus = filterStatus === "Semua" || itemStatus === filterStatus.toUpperCase();
       
@@ -168,8 +169,6 @@ export default function App() {
 
   const stats = useMemo(() => {
     const total = filteredData.length;
-    // Pada stats ini kita hitung dari kumpulan data yang TERSARING
-    // Tapi karena kita ingin metrik menampilkan konteks yang jelas, kita ambil data murni
     const aktif = filteredData.filter(d => (d['KETERANGAN'] || '').trim().toUpperCase() === 'AKTIF').length;
     const lulus = filteredData.filter(d => (d['KETERANGAN'] || '').trim().toUpperCase() === 'LULUS').length;
     
@@ -179,7 +178,6 @@ export default function App() {
         prodiCount[d['PRODI']] = (prodiCount[d['PRODI']] || 0) + 1;
       }
     });
-    // Diurutkan berdasarkan abjad (A-Z)
     const prodiList = Object.entries(prodiCount).sort((a, b) => a[0].localeCompare(b[0]));
 
     const provinsiCount = {};
@@ -213,7 +211,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 text-slate-800 font-sans pb-12">
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10 shadow-sm">
+      {/* Header akan disembunyikan saat mode print aktif */}
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-10 shadow-sm print-hide-header">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             
@@ -231,11 +230,22 @@ export default function App() {
                <Stethoscope id="fallback-icon" className="h-6 w-6 text-indigo-600 hidden absolute" />
             </div>
 
-            <h1 className="text-xl font-bold text-gray-900 hidden sm:block">Sistem Informasi PPDS, PPDSS RSSA</h1>
-            <h1 className="text-xl font-bold text-gray-900 sm:hidden">Sistem Informasi PPDS, PPDSS RSSA</h1>
+            <h1 className="text-xl font-bold text-gray-900 hidden sm:block">Sistem Informasi PPDS RSSA</h1>
+            <h1 className="text-xl font-bold text-gray-900 sm:hidden">SI PPDS RSSA</h1>
           </div>
           <div className="flex items-center gap-4">
-            {/* Tombol Unggah Data disembunyikan sesuai permintaan */}
+            
+            {/* Tombol Cetak Laporan */}
+            <button 
+              onClick={handlePrint}
+              className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 shadow-sm"
+            >
+              <Printer className="w-4 h-4" />
+              <span className="hidden sm:inline">Cetak Laporan</span>
+              <span className="sm:hidden">Cetak</span>
+            </button>
+
+            {/* Tombol Unggah Data (disembunyikan) */}
             <label className="hidden cursor-pointer bg-indigo-50 hover:bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 border border-indigo-200">
               <Upload className="w-4 h-4 hidden sm:block" />
               Unggah Data (CSV)
@@ -250,9 +260,21 @@ export default function App() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-6">
+      {/* Bagian judul khusus cetak yang hanya muncul di PDF/Kertas */}
+      <div className="hidden print-show-header max-w-7xl mx-auto px-4 mt-8 mb-4 border-b pb-4">
+         <div className="flex items-center gap-4">
+            <Stethoscope className="h-10 w-10 text-indigo-600" />
+            <div>
+               <h1 className="text-2xl font-bold text-gray-900">Laporan Data PPDS RSSA</h1>
+               <p className="text-gray-500">Dicetak berdasarkan filter: {filterStatus} | {filterProdi}</p>
+            </div>
+         </div>
+      </div>
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-6 print-main">
         
-        <div className="flex flex-col md:flex-row gap-4 justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+        {/* Kolom Pencarian & Filter (Disembunyikan saat dicetak) */}
+        <div className="flex flex-col md:flex-row gap-4 justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 print-hidden">
           <div className="relative w-full md:w-96">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <Search className="h-5 w-5 text-gray-400" />
@@ -298,13 +320,14 @@ export default function App() {
           </div>
         </div>
 
+        {/* Ringkasan Statistik */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex items-center gap-4">
             <div className="bg-blue-100 p-3 rounded-full text-blue-600">
               <Users className="w-8 h-8" />
             </div>
             <div>
-              <p className="text-sm font-medium text-gray-500">Total Mahasiswa</p>
+              <p className="text-sm font-medium text-gray-500">Total Filtered</p>
               <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
             </div>
           </div>
@@ -337,24 +360,25 @@ export default function App() {
           </div>
         </div>
 
+        {/* Visualisasi Data */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 lg:col-span-2">
             <div className="flex items-center gap-2 mb-6">
               <PieChart className="w-5 h-5 text-indigo-500" />
-              <h2 className="text-lg font-bold text-gray-900">Program Studi</h2>
+              <h2 className="text-lg font-bold text-gray-900">Sebaran Program Studi</h2>
             </div>
             <div className="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
               {stats.prodiList.length > 0 ? stats.prodiList.map(([prodi, count]) => {
                 const percentage = (count / stats.total) * 100;
                 return (
-                  <div key={prodi} className="flex flex-col gap-1">
+                  <div key={prodi} className="flex flex-col gap-1 print-bar-item">
                     <div className="flex justify-between text-sm">
                       <span className="font-medium text-gray-700 truncate mr-2">{prodi}</span>
                       <span className="text-gray-500 font-medium">{count} Orang</span>
                     </div>
-                    <div className="w-full bg-gray-100 rounded-full h-2.5">
+                    <div className="w-full bg-gray-100 rounded-full h-2.5 print-bg-gray">
                       <div 
-                        className="bg-indigo-500 h-2.5 rounded-full" 
+                        className="bg-indigo-500 h-2.5 rounded-full print-bg-indigo" 
                         style={{ width: `${percentage}%` }}
                       ></div>
                     </div>
@@ -407,14 +431,14 @@ export default function App() {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-          <div className="p-6 border-b border-gray-200 flex justify-between items-center bg-gray-50/50">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden print-table-container">
+          <div className="p-6 border-b border-gray-200 flex justify-between items-center bg-gray-50/50 print-bg-white">
             <div>
               <h2 className="text-lg font-bold text-gray-900">Data Rinci Mahasiswa</h2>
-              <p className="text-sm text-gray-500 mt-1">Menampilkan data berdasarkan filter yang dipilih</p>
+              <p className="text-sm text-gray-500 mt-1 print-hidden">Menampilkan data berdasarkan filter yang dipilih</p>
             </div>
             <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm font-semibold rounded-full">
-              Total: {filteredData.length}
+              Total Data: {filteredData.length}
             </span>
           </div>
           
@@ -461,8 +485,9 @@ export default function App() {
             </table>
           </div>
 
+          {/* Kontrol Pagination disembunyikan saat dicetak */}
           {filteredData.length > 0 && (
-            <div className="p-4 flex flex-col sm:flex-row items-center justify-between bg-white border-t border-gray-100 gap-4">
+            <div className="p-4 flex flex-col sm:flex-row items-center justify-between bg-white border-t border-gray-100 gap-4 print-hidden">
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <span className="text-sm text-gray-600">
                   Menampilkan <span className="font-semibold">{(currentPage - 1) * itemsPerPage + 1}</span> - <span className="font-semibold">{Math.min(currentPage * itemsPerPage, filteredData.length)}</span> dari <span className="font-semibold">{filteredData.length}</span> data
@@ -472,13 +497,17 @@ export default function App() {
                   <span className="text-sm text-gray-600">Tampilkan:</span>
                   <select
                     value={itemsPerPage}
-                    onChange={(e) => setItemsPerPage(Number(e.target.value))}
+                    onChange={(e) => {
+                       setItemsPerPage(Number(e.target.value));
+                       setCurrentPage(1);
+                    }}
                     className="border border-gray-300 rounded-md text-sm py-1 px-2 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-gray-50 hover:bg-white transition-colors cursor-pointer"
                   >
                     <option value={10}>10</option>
                     <option value={25}>25</option>
                     <option value={50}>50</option>
                     <option value={100}>100</option>
+                    <option value={1000}>Semua (Untuk Print)</option>
                   </select>
                 </div>
               </div>
@@ -508,6 +537,7 @@ export default function App() {
         
       </main>
 
+      {/* CSS Tambahan Khusus untuk Tampilan Print (Kertas/PDF) */}
       <style dangerouslySetInnerHTML={{__html: `
         .custom-scrollbar::-webkit-scrollbar {
           width: 6px;
@@ -522,6 +552,36 @@ export default function App() {
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
           background: #a1a1aa; 
+        }
+
+        /* LOGIKA SAAT MENU CETAK DITEKAN */
+        @media print {
+          /* Paksa browser untuk mencetak warna latar belakang (warna grafik & lencana) */
+          * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+          }
+          
+          /* Sembunyikan elemen yang tidak perlu dicetak */
+          .print-hidden, .print-hide-header {
+            display: none !important;
+          }
+          
+          /* Tampilkan header khusus laporan (judul) */
+          .print-show-header {
+            display: block !important;
+          }
+
+          /* Sesuaikan layout agar muat di kertas A4 */
+          body { background-color: white !important; }
+          .print-main { margin-top: 0 !important; padding-top: 0 !important; gap: 1rem !important; }
+          
+          /* Hilangkan bayangan kotak agar tinta tidak boros dan lebih rapi */
+          .shadow-sm { box-shadow: none !important; border: 1px solid #e5e7eb !important; }
+          .rounded-xl { border-radius: 4px !important; }
+
+          /* Pastikan daftar list prodi memanjang tanpa scroll */
+          .custom-scrollbar { max-height: none !important; overflow: visible !important; }
         }
       `}} />
     </div>
