@@ -246,17 +246,17 @@ export default function App() {
               <span className="sm:hidden">Cetak</span>
             </button>
 
-            {/* Tombol Arsip SIP & STR (Google Drive) */}
+            {/* Tombol Arsip SPK & RKK (Google Drive) */}
             <a 
-              href="https://drive.google.com/drive/folders/1fclCSWHOohCeo5iY-FXSpdAhO1xjEo2X?usp=sharing" 
+              href="https://drive.google.com/drive/folders/1UMTvaE9qjy-4rQMinoruREo2-0VpKckr?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 shadow-sm print-hidden"
-              title="Buka Arsip Dokumen SIP & STR"
+              title="Buka Arsip Dokumen SPK & RKK"
             >
               <FolderOpen className="w-4 h-4" />
-              <span className="hidden sm:inline">Arsip SIP & STR</span>
-              <span className="sm:hidden">Arsip</span>
+              <span className="hidden sm:inline">Arsip SPK RKK</span>
+              <span className="sm:hidden">SPK RKK</span>
             </a>
 
             {/* Tombol Unggah Data (disembunyikan) */}
