@@ -12,7 +12,8 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
-  Printer // Tambahan ikon untuk tombol cetak
+  Printer, 
+  FolderOpen // Tambahan ikon untuk folder Drive
 } from 'lucide-react';
 
 // Fungsi untuk memproses teks CSV
@@ -244,6 +245,19 @@ export default function App() {
               <span className="hidden sm:inline">Cetak Laporan</span>
               <span className="sm:hidden">Cetak</span>
             </button>
+
+            {/* Tombol Arsip SIP & STR (Google Drive) */}
+            <a 
+              href="https://drive.google.com/drive/folders/1fclCSWHOohCeo5iY-FXSpdAhO1xjEo2X?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 shadow-sm print-hidden"
+              title="Buka Arsip Dokumen SIP & STR"
+            >
+              <FolderOpen className="w-4 h-4" />
+              <span className="hidden sm:inline">Arsip SIP & STR</span>
+              <span className="sm:hidden">Arsip</span>
+            </a>
 
             {/* Tombol Unggah Data (disembunyikan) */}
             <label className="hidden cursor-pointer bg-indigo-50 hover:bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 border border-indigo-200">
