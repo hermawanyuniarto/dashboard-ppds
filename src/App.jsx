@@ -246,17 +246,17 @@ export default function App() {
               <span className="sm:hidden">Cetak</span>
             </button>
 
-            {/* Tombol Arsip SPK & RKK (Google Drive) */}
+            {/* Tombol Arsip SIP & STR (Google Drive) */}
             <a 
-              href="https://drive.google.com/drive/folders/1UMTvaE9qjy-4rQMinoruREo2-0VpKckr?usp=sharing" 
+              href="https://drive.google.com/drive/folders/GANTI_DENGAN_LINK_DRIVE_ANDA" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 shadow-sm print-hidden"
-              title="Buka Arsip Dokumen SPK & RKK"
+              title="Buka Arsip Dokumen SIP & STR"
             >
               <FolderOpen className="w-4 h-4" />
-              <span className="hidden sm:inline">Arsip SPK RKK</span>
-              <span className="sm:hidden">SPK RKK</span>
+              <span className="hidden sm:inline">Arsip SIP & STR</span>
+              <span className="sm:hidden">Arsip</span>
             </a>
 
             {/* Tombol Unggah Data (disembunyikan) */}
@@ -465,6 +465,7 @@ export default function App() {
                   <th className="p-4 font-semibold">Program Studi</th>
                   <th className="p-4 font-semibold hidden md:table-cell">Gender</th>
                   <th className="p-4 font-semibold hidden lg:table-cell">Provinsi</th>
+                  <th className="p-4 font-semibold">Periode Masuk</th>
                   <th className="p-4 font-semibold text-center">Status</th>
                 </tr>
               </thead>
@@ -478,6 +479,9 @@ export default function App() {
                       {row['JENIS KELAMIN']?.toUpperCase().includes('LAKI') || row['JENIS KELAMIN'] === 'L' ? 'Pria' : 'Wanita'}
                     </td>
                     <td className="p-4 text-gray-600 hidden lg:table-cell">{row['PROVINSI']}</td>
+                    <td className="p-4 text-gray-700 font-medium">
+                      {row['PERIODE MASUK'] || row['TANGGAL MASUK'] || row['TAHUN MASUK'] || '-'}
+                    </td>
                     <td className="p-4 text-center">
                       <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                         (row['KETERANGAN'] || '').trim().toUpperCase() === 'AKTIF' ? 'bg-green-100 text-green-700' : 
@@ -490,7 +494,7 @@ export default function App() {
                   </tr>
                 )) : (
                   <tr>
-                    <td colSpan="6" className="p-8 text-center text-gray-500">
+                    <td colSpan="7" className="p-8 text-center text-gray-500">
                       Tidak ada data yang ditemukan
                     </td>
                   </tr>
