@@ -13,7 +13,7 @@ import {
   ChevronRight,
   X,
   Printer, 
-  FolderOpen // Tambahan ikon untuk folder Drive
+  FolderOpen // Ikon untuk folder Drive
 } from 'lucide-react';
 
 // Fungsi untuk memproses teks CSV
@@ -84,7 +84,7 @@ export default function App() {
   const [filterProdi, setFilterProdi] = useState("Semua");
   // Filter status diset "AKTIF" sebagai default bawaan
   const [filterStatus, setFilterStatus] = useState("AKTIF"); 
-  const [filterPeriode, setFilterPeriode] = useState("Semua"); // TAMBAHAN: State untuk filter periode
+  const [filterPeriode, setFilterPeriode] = useState("Semua"); 
   const [isClient, setIsClient] = useState(false);
   
   const [currentPage, setCurrentPage] = useState(1);
@@ -132,7 +132,7 @@ export default function App() {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, filterProdi, filterStatus, filterPeriode, itemsPerPage]); // TAMBAHAN: Tambahkan filterPeriode
+  }, [searchTerm, filterProdi, filterStatus, filterPeriode, itemsPerPage]);
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
@@ -148,10 +148,31 @@ export default function App() {
     }
   };
 
-  // Fungsi untuk memicu dialog print bawaan browser
   const handlePrint = () => {
     window.print();
   };
+
+  // --- FITUR FILTER DINAMIS ---
+  // Menghitung daftar periode yang tersedia HANYA berdasarkan Status dan Prodi yang sedang dipilih
+  const availablePeriodes = useMemo(() => {
+    const partiallyFiltered = data.filter(item => {
+      const matchProdi = filterProdi === "Semua" || item['PRODI'] === filterProdi;
+      const itemStatus = (item['KETERANGAN'] || '').trim().toUpperCase();
+      const matchStatus = filterStatus === "Semua" || itemStatus === filterStatus.toUpperCase();
+      return matchProdi && matchStatus;
+    });
+
+    const periodes = partiallyFiltered.map(d => d['PERIODE MASUK'] || d['TANGGAL MASUK'] || d['TAHUN MASUK']).filter(Boolean);
+    return [...new Set(periodes)].sort();
+  }, [data, filterStatus, filterProdi]);
+
+  // Efek Otomatis: Jika kita mengganti Status dan ternyata pilihan Periode yang sedang aktif tidak ada di Status itu, maka Reset periode ke "Semua"
+  useEffect(() => {
+    if (filterPeriode !== "Semua" && !availablePeriodes.includes(filterPeriode)) {
+      setFilterPeriode("Semua");
+    }
+  }, [availablePeriodes, filterPeriode]);
+  // -----------------------------
 
   const filteredData = useMemo(() => {
     return data.filter(item => {
@@ -162,13 +183,12 @@ export default function App() {
       const itemStatus = (item['KETERANGAN'] || '').trim().toUpperCase();
       const matchStatus = filterStatus === "Semua" || itemStatus === filterStatus.toUpperCase();
       
-      // TAMBAHAN: Logika filter untuk periode masuk
       const itemPeriode = item['PERIODE MASUK'] || item['TANGGAL MASUK'] || item['TAHUN MASUK'] || '-';
       const matchPeriode = filterPeriode === "Semua" || itemPeriode === filterPeriode;
       
       return matchSearch && matchProdi && matchStatus && matchPeriode;
     });
-  }, [data, searchTerm, filterProdi, filterStatus, filterPeriode]); // TAMBAHAN: Tambahkan filterPeriode
+  }, [data, searchTerm, filterProdi, filterStatus, filterPeriode]); 
 
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const currentTableData = filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
@@ -213,17 +233,10 @@ export default function App() {
     return [...new Set(statuses)].sort();
   }, [data]);
 
-  // TAMBAHAN: Mengambil daftar unik untuk periode masuk dari file CSV
-  const uniquePeriodes = useMemo(() => {
-    const periodes = data.map(d => d['PERIODE MASUK'] || d['TANGGAL MASUK'] || d['TAHUN MASUK']).filter(Boolean);
-    return [...new Set(periodes)].sort();
-  }, [data]);
-
   if (!isClient) return null;
 
   return (
     <div className="min-h-screen bg-gray-50 text-slate-800 font-sans pb-12">
-      {/* Header akan disembunyikan saat mode print aktif */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10 shadow-sm print-hide-header">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -257,16 +270,16 @@ export default function App() {
               <span className="sm:hidden">Cetak</span>
             </button>
 
-            {/* Tombol Arsip SIP & STR (Google Drive) */}
+            {/* Tombol Arsip SPK RKK */}
             <a 
-              href="https://drive.google.com/drive/folders/GANTI_DENGAN_LINK_DRIVE_ANDA" 
+              href="https://drive.google.com/drive/folders/GANTI_DENGAN_LINK_DRIVE_SPK_RKK_ANDA" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 shadow-sm print-hidden"
-              title="Buka Arsip Dokumen SIP & STR"
+              title="Buka Arsip Dokumen SPK RKK"
             >
               <FolderOpen className="w-4 h-4" />
-              <span className="hidden sm:inline">Arsip SIP & STR</span>
+              <span className="hidden sm:inline">Arsip SPK RKK</span>
               <span className="sm:hidden">Arsip</span>
             </a>
 
@@ -298,7 +311,7 @@ export default function App() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-6 print-main">
         
-        {/* Kolom Pencarian & Filter (Disembunyikan saat dicetak) */}
+        {/* Kolom Pencarian & Filter */}
         <div className="flex flex-col md:flex-row gap-4 justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 print-hidden">
           <div className="relative w-full md:w-96">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -333,14 +346,14 @@ export default function App() {
               ))}
             </select>
             
-            {/* TAMBAHAN: Dropdown Menu untuk Filter Periode */}
+            {/* Dropdown Menu untuk Filter Periode Dinamis */}
             <select
               className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               value={filterPeriode}
               onChange={(e) => setFilterPeriode(e.target.value)}
             >
               <option value="Semua">Semua Periode</option>
-              {uniquePeriodes.map(periode => (
+              {availablePeriodes.map(periode => (
                 <option key={periode} value={periode}>{periode}</option>
               ))}
             </select>
@@ -579,7 +592,6 @@ export default function App() {
         
       </main>
 
-      {/* CSS Tambahan Khusus untuk Tampilan Print (Kertas/PDF) */}
       <style dangerouslySetInnerHTML={{__html: `
         .custom-scrollbar::-webkit-scrollbar {
           width: 6px;
@@ -596,33 +608,21 @@ export default function App() {
           background: #a1a1aa; 
         }
 
-        /* LOGIKA SAAT MENU CETAK DITEKAN */
         @media print {
-          /* Paksa browser untuk mencetak warna latar belakang (warna grafik & lencana) */
           * {
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
           }
-          
-          /* Sembunyikan elemen yang tidak perlu dicetak */
           .print-hidden, .print-hide-header {
             display: none !important;
           }
-          
-          /* Tampilkan header khusus laporan (judul) */
           .print-show-header {
             display: block !important;
           }
-
-          /* Sesuaikan layout agar muat di kertas A4 */
           body { background-color: white !important; }
           .print-main { margin-top: 0 !important; padding-top: 0 !important; gap: 1rem !important; }
-          
-          /* Hilangkan bayangan kotak agar tinta tidak boros dan lebih rapi */
           .shadow-sm { box-shadow: none !important; border: 1px solid #e5e7eb !important; }
           .rounded-xl { border-radius: 4px !important; }
-
-          /* Pastikan daftar list prodi memanjang tanpa scroll */
           .custom-scrollbar { max-height: none !important; overflow: visible !important; }
         }
       `}} />
