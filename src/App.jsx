@@ -84,6 +84,7 @@ export default function App() {
   const [filterProdi, setFilterProdi] = useState("Semua");
   // Filter status diset "AKTIF" sebagai default bawaan
   const [filterStatus, setFilterStatus] = useState("AKTIF"); 
+  const [filterPeriode, setFilterPeriode] = useState("Semua"); // TAMBAHAN: State untuk filter periode
   const [isClient, setIsClient] = useState(false);
   
   const [currentPage, setCurrentPage] = useState(1);
@@ -131,7 +132,7 @@ export default function App() {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, filterProdi, filterStatus, itemsPerPage]);
+  }, [searchTerm, filterProdi, filterStatus, filterPeriode, itemsPerPage]); // TAMBAHAN: Tambahkan filterPeriode
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
@@ -161,9 +162,13 @@ export default function App() {
       const itemStatus = (item['KETERANGAN'] || '').trim().toUpperCase();
       const matchStatus = filterStatus === "Semua" || itemStatus === filterStatus.toUpperCase();
       
-      return matchSearch && matchProdi && matchStatus;
+      // TAMBAHAN: Logika filter untuk periode masuk
+      const itemPeriode = item['PERIODE MASUK'] || item['TANGGAL MASUK'] || item['TAHUN MASUK'] || '-';
+      const matchPeriode = filterPeriode === "Semua" || itemPeriode === filterPeriode;
+      
+      return matchSearch && matchProdi && matchStatus && matchPeriode;
     });
-  }, [data, searchTerm, filterProdi, filterStatus]);
+  }, [data, searchTerm, filterProdi, filterStatus, filterPeriode]); // TAMBAHAN: Tambahkan filterPeriode
 
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const currentTableData = filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
@@ -206,6 +211,12 @@ export default function App() {
   const uniqueStatus = useMemo(() => {
     const statuses = data.map(d => (d['KETERANGAN'] || '').trim().toUpperCase()).filter(Boolean);
     return [...new Set(statuses)].sort();
+  }, [data]);
+
+  // TAMBAHAN: Mengambil daftar unik untuk periode masuk dari file CSV
+  const uniquePeriodes = useMemo(() => {
+    const periodes = data.map(d => d['PERIODE MASUK'] || d['TANGGAL MASUK'] || d['TAHUN MASUK']).filter(Boolean);
+    return [...new Set(periodes)].sort();
   }, [data]);
 
   if (!isClient) return null;
@@ -280,7 +291,7 @@ export default function App() {
             <Stethoscope className="h-10 w-10 text-indigo-600" />
             <div>
                <h1 className="text-2xl font-bold text-gray-900">Laporan Data PPDS RSSA</h1>
-               <p className="text-gray-500">Dicetak berdasarkan filter: {filterStatus} | {filterProdi}</p>
+               <p className="text-gray-500">Dicetak berdasarkan filter: {filterStatus} | {filterProdi} | {filterPeriode === "Semua" ? "Semua Periode" : filterPeriode}</p>
             </div>
          </div>
       </div>
@@ -321,6 +332,19 @@ export default function App() {
                 <option key={prodi} value={prodi}>{prodi}</option>
               ))}
             </select>
+            
+            {/* TAMBAHAN: Dropdown Menu untuk Filter Periode */}
+            <select
+              className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              value={filterPeriode}
+              onChange={(e) => setFilterPeriode(e.target.value)}
+            >
+              <option value="Semua">Semua Periode</option>
+              {uniquePeriodes.map(periode => (
+                <option key={periode} value={periode}>{periode}</option>
+              ))}
+            </select>
+
             <select
               className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               value={filterStatus}
