@@ -213,7 +213,7 @@ PPDS ADAPTASI;dr. Albert Lesmana;Laki - Laki;1 January 2020;DKI JAKARTA;31;31730
 178071101011001;dr. Aristoteles;Laki - Laki;1 January 2018;JAWA TIMUR;35;3509213112870003;Orthopedi dan Traumatologi;LULUS
 198070100111003;dr. Oei Thomas Sanjaya Wibowo;Laki - Laki;1 July 2019;JAWA TIMUR;35;3578260412900001;Ilmu Bedah;LULUS
 228071400111003;dr. Septina Yosephine;Perempuan;1 July 2022;DKI JAKARTA;31;3175025109890007;Dermatologi Venereologi dan Estetika;LULUS
--;dr. Dyah Ayu Sakinah;Perempuan;1 January 2023;JAWA BARAT;32;3273206906970002;Dermatologi Venereologi dan Estetika;AKTIF
+-;dr. Dyah Ayu Sakinah;Perempuan;1 January 2023;JAWA BARAT;32;3273206906970002;Dermatologi Venereologi dan Estetika;LULUS
 248071400011006;dr. Alvina Ulfah Rusmayuni;Perempuan;1 January 2025;KALIMANTAN TIMUR;64;6404054906920006;Dermatologi Venereologi dan Estetika;AKTIF
 188071501011003;dr. Arum Dewi Sawitri;Perempuan;1 January 2019;JAWA TIMUR;35;3573055805890001;Anestesiologi dan Terapi Intensif;LULUS
 178070201111004;dr. Arum Gladys Kusumaningrum;Perempuan;1 July 2017;JAWA TIMUR;35;350725500990003;Penyakit Dalam;LULUS
@@ -307,15 +307,15 @@ PPDS ADAPTASI;dr. Albert Lesmana;Laki - Laki;1 January 2020;DKI JAKARTA;31;31730
 -;dr. Merrynta Rahmania;Perempuan;1 January 2021;DKI JAKARTA;31;3171045806880003;Ilmu Kesehatan Anak;LULUS
 208070100011006;dr. Etna Irianti Putri;Perempuan;1 January 2021;JAWA TIMUR;35;3524226303930004;Ilmu Bedah;LULUS
 -;dr. Novita Nur Cahyani;Perempuan;1 January 2021;JAWA TIMUR;35;3526104402870004;Ilmu Kesehatan Anak;LULUS
-208070100011004;dr. Farida Dwi Irnawati;Perempuan;1 January 2021;JAWA TIMUR;35;3509077107920001;Ilmu Bedah;AKTIF
+208070100011004;dr. Farida Dwi Irnawati;Perempuan;1 January 2021;JAWA TIMUR;35;3509077107920001;Ilmu Bedah;LULUS
 188071001111002;dr. Christian Robby Sanjaya;Laki - Laki;1 July 2018;JAWA TIMUR;35;357304210880002;Radiologi;LULUS
 188070301011001;dr. Christian Surya Eka Putra;Laki - Laki;1 January 2019;JAWA TIMUR;35;3573013105900005;Pulmonologi dan Kedokteran Respirasi;LULUS
 178070501111003;dr. Christina Amalia;Perempuan;1 July 2017;JAWA BARAT;32;3276065409860006;Patologi Klinik;LULUS
 208070100011002;dr. Muhammad Ridwan;Laki - Laki;1 January 2021;JAWA TIMUR;35;3504011910900001;Ilmu Bedah;LULUS
-218070100111001;dr. Akhmad Ferro Avisena;Laki - Laki;1 July 2021;JAWA TIMUR;35;3524180206920001;Ilmu Bedah;AKTIF
+218070100111001;dr. Akhmad Ferro Avisena;Laki - Laki;1 July 2021;JAWA TIMUR;35;3524180206920001;Ilmu Bedah;LULUS
 -;dr. Sepfrita Katerine Aftabuddin;Perempuan;1 January 2021;JAWA TIMUR;35;3578236309890001;Ilmu Kesehatan Anak;LULUS
-218070100111007;dr. Aprianda Saputra;Laki - Laki;1 July 2021;BENGKULU;17;1771060804900001;Ilmu Bedah;AKTIF
-218070100111006;dr. Avan Guntur Satriawan;Laki - Laki;1 July 2021;JAWA TIMUR;35;3573030601950002;Ilmu Bedah;AKTIF
+218070100111007;dr. Aprianda Saputra;Laki - Laki;1 July 2021;BENGKULU;17;1771060804900001;Ilmu Bedah;LULUS
+218070100111006;dr. Avan Guntur Satriawan;Laki - Laki;1 July 2021;JAWA TIMUR;35;3573030601950002;Ilmu Bedah;LULUS
 198072200111004;dr. Citra Destya Rahma Putri;Perempuan;1 July 2019;JAWA TIMUR;35;3515085612910005;Mikrobiologi Klinik;LULUS
 168070900111005;dr. Citra Tarannita;Perempuan;1 July 2016;DI YOGYAKARTA;34;3404094511810000;Ilmu Kesehatan Anak;LULUS
 208070900011010;dr. Tita Luthfia Sari;Perempuan;1 January 2021;JAWA TIMUR;35;3518046001900003;Ilmu Kesehatan Anak;LULUS
@@ -471,13 +471,13 @@ Sedang Proses;dr. Tasa Riszkia;Perempuan;1 July 2021;JAWA TIMUR;35;3573054407930
 -;dr. Prastiti Rahmanita;Perempuan;1 January 2021;JAWA TIMUR;35;3573024701930002;Ilmu Kesehatan Anak;LULUS
 238070900011004;dr. Emiliana Susanti Foris;Perempuan;1 January 2024;NUSA TENGGARA TIMUR;53;5307056609950003;;
 -;dr. RAYI IQJI ASASAIN;Laki - Laki;1 January 2021;BANTEN;36;3674040111910002;Ilmu Kesehatan Anak;LULUS
-208070900011003;dr. Tazkiyatul Firdaus;Perempuan;1 January 2021;JAWA TIMUR;35;3524156204930001;Ilmu Kesehatan Anak;AKTIF
-218070900111012;dr. ATHIRA FITRIAH;Perempuan;1 July 2021;BANTEN;36;3672076704930001;Ilmu Kesehatan Anak;AKTIF
+208070900011003;dr. Tazkiyatul Firdaus;Perempuan;1 January 2021;JAWA TIMUR;35;3524156204930001;Ilmu Kesehatan Anak;LULUS
+218070900111012;dr. ATHIRA FITRIAH;Perempuan;1 July 2021;BANTEN;36;3672076704930001;Ilmu Kesehatan Anak;LULUS
 218070900111006;dr. CHRISTIAN NOPIANDI;Laki - Laki;1 July 2021;RIAU;14;1402020611840002;Ilmu Kesehatan Anak;LULUS
 158071100111001;dr. Fajar Sholehudin Salim;Laki - Laki;1 July 2015;KALIMANTAN BARAT;61;6171012206 890000;Orthopedi dan Traumatologi;LULUS
-218070900111008;dr. FANIA DORA ASLAMY;Perempuan;1 July 2021;JAWA TIMUR;35;3526045906930003;Ilmu Kesehatan Anak;AKTIF
+218070900111008;dr. FANIA DORA ASLAMY;Perempuan;1 July 2021;JAWA TIMUR;35;3526045906930003;Ilmu Kesehatan Anak;LULUS
 20910010181;dr. Grace Malinda Limopranoto;Perempuan;1 July 2021;JAWA TIMUR;35;3578276812850001;Ilmu Kesehatan Anak;LULUS
-218070900111010;dr. Hardian Rakhmawardana;Laki - Laki;1 July 2021;JAWA TIMUR;35;3509062710840003;Ilmu Kesehatan Anak;AKTIF
+218070900111010;dr. Hardian Rakhmawardana;Laki - Laki;1 July 2021;JAWA TIMUR;35;3509062710840003;Ilmu Kesehatan Anak;LULUS
 218070900111004;dr. La Ode Purna Alam Firdaus;Laki - Laki;1 July 2021;SULAWESI TENGGARA;74;7472062703860002;Ilmu Kesehatan Anak;AKTIF
 238070900011002;dr. Kienan Agni Dewanty;Perempuan;1 January 2024;JAWA TIMUR;35;3517094305960003;Ilmu Kesehatan Anak;AKTIF
 178071500011002;dr. Fanniyah;Perempuan;1 January 2018;JAWA TIMUR;35;3575024611900000;Anestesiologi dan Terapi Intensif;LULUS
@@ -485,13 +485,13 @@ Sedang Proses;dr. Tasa Riszkia;Perempuan;1 July 2021;JAWA TIMUR;35;3573054407930
 178071401111001;dr. Faradiani Rasyidi;Perempuan;1 July 2017;BANTEN;36;3603286710900000;Dermatologi Venereologi dan Estetika;LULUS
 178070601111004;dr. Faradina Risza Quamila;Perempuan;1 July 2017;JAWA TIMUR;35;3573014309880003;Ilmu Kesehatan Mata;LULUS
 198070200111010;dr. Farah Nishfi Ramadhani;Perempuan;1 July 2019;JAWA TIMUR;35;3525106003920007;Penyakit Dalam;MENGUNDURKAN DIRI
-218070900111013;dr. Nia Sahra Labetubun;Perempuan;1 July 2021;MALUKU;81;8172026706930001;Ilmu Kesehatan Anak;AKTIF
+218070900111013;dr. Nia Sahra Labetubun;Perempuan;1 July 2021;MALUKU;81;8172026706930001;Ilmu Kesehatan Anak;LULUS
 168071300111005;dr. Faris Wahyu Nugroho;Laki - Laki;1 July 2016;JAWA TENGAH;33;3319021204850001;Jantung dan Pembuluh Darah;LULUS
 218070900111002;dr. Sarah Zoraya Mirza;Perempuan;1 July 2021;SUMATERA UTARA;12;1271046006910003;Ilmu Kesehatan Anak;LULUS
 218070900011003;dr. Astika Jr Said;Perempuan;1 January 2022;RIAU;14;1471084104930001;Ilmu Kesehatan Anak;LULUS
 218070900011002;dr. Erlisa Devi Saptirina Putri;Perempuan;1 January 2022;JAWA TIMUR;35;3522194105890004;Ilmu Kesehatan Anak;LULUS
 218070900011004;dr. Galing Chandika Putra;Laki - Laki;1 January 2022;LAMPUNG;18;1812012410930004;Ilmu Kesehatan Anak;LULUS
-218070900011005;dr. Hernita Taurustya;Perempuan;1 January 2022;BENGKULU;17;1703074105850001;Ilmu Kesehatan Anak;AKTIF
+218070900011005;dr. Hernita Taurustya;Perempuan;1 January 2022;BENGKULU;17;1703074105850001;Ilmu Kesehatan Anak;LULUS
 198070700011002;dr. Aditya Leonard Tandio, MPH;Laki - Laki;1 January 2020;NUSA TENGGARA TIMUR;53;5303051107870003;Ilmu Kesehatan T.H.T.B.K.L;LULUS
 198070700011003;dr. Agustinus Betha Devito;Laki - Laki;1 January 2020;BANTEN;36;3603170108870009;Ilmu Kesehatan T.H.T.B.K.L;LULUS
 198070700011004;dr. Christian Hendrik Marulitua;Laki - Laki;1 January 2020;JAWA BARAT;32;3273202104920004;Ilmu Kesehatan T.H.T.B.K.L;LULUS
@@ -508,7 +508,7 @@ Sedang Proses;dr. Tasa Riszkia;Perempuan;1 July 2021;JAWA TIMUR;35;3573054407930
 218070900011001;dr. Najwa Amalia;Perempuan;1 January 2022;JAWA TIMUR;35;3515185804920005;Ilmu Kesehatan Anak;LULUS
 218070900011006;dr. Sintya Dyliza;Perempuan;1 January 2022;SULAWESI TENGGARA;74;7405086712870001;Ilmu Kesehatan Anak;LULUS
 168070401011002;dr. Fellita Ratri Anggraeni;Perempuan;1 January 2017;KALIMANTAN SELATAN;63;6372066808870000;Obstetri dan Ginekologi;LULUS
-228070900111002;dr. Angela Permera Tubuq;Perempuan;1 July 2022;KALIMANTAN TIMUR;64;6407074808880006;Ilmu Kesehatan Anak;AKTIF
+228070900111002;dr. Angela Permera Tubuq;Perempuan;1 July 2022;KALIMANTAN TIMUR;64;6407074808880006;Ilmu Kesehatan Anak;LULUS
 -;dr. Devyntya Monica Putri;Perempuan;1 January 2021;NUSA TENGGARA BARAT;52;5271056811910002;Ilmu Kesehatan Mata;LULUS
 188070601011007;dr. Ferdi Kurniawan;Laki - Laki;1 January 2019;KALIMANTAN TIMUR;64;6472062107890003;Ilmu Kesehatan Mata;LULUS
 -;dr. Dicky Putra Perdana;Laki - Laki;1 January 2021;JAWA TIMUR;35;3573011503880002;Ilmu Kesehatan Mata;LULUS
@@ -517,14 +517,14 @@ Sedang Proses;dr. Tasa Riszkia;Perempuan;1 July 2021;JAWA TIMUR;35;3573054407930
 188070201011005;dr. Ferdinando Motuho Baeha;Laki - Laki;1 January 2019;SUMATERA UTARA;12;1271072108910004;Penyakit Dalam;LULUS
 2080706000110044;dr. Intan Kautsarani;Perempuan;1 January 2021;JAWA TIMUR;35;3573055205950002;Ilmu Kesehatan Mata;LULUS
 168070600111005;dr. Ferriya Sri Agustin;Perempuan;1 July 2016;JAWA TIMUR;35;3503044502840004;Ilmu Kesehatan Mata;LULUS
-228070900111003;dr. Aulya Farra Rahmadany;Perempuan;1 July 2022;JAWA TIMUR;35;3524225104910001;Ilmu Kesehatan Anak;AKTIF
+228070900111003;dr. Aulya Farra Rahmadany;Perempuan;1 July 2022;JAWA TIMUR;35;3524225104910001;Ilmu Kesehatan Anak;LULUS
 228070900111006;dr. Firmandiyara Angkasa;Perempuan;1 July 2022;JAWA BARAT;32;3273026308950002;Ilmu Kesehatan Anak;AKTIF
 178071101111002;dr. Ficky Fajar Sahdiniar;Laki - Laki;1 July 2017;JAWA TIMUR;35;35730524128800 00;Orthopedi dan Traumatologi;LULUS
 178070401011001;dr. Fikhy Rizky Hapsari;Perempuan;1 January 2018;JAWA TIMUR;35;3509195306850000;Obstetri dan Ginekologi;LULUS
 158070100011004;dr. Fiki Aprilino Risenta;Laki - Laki;1 January 2016;BANTEN;36;3674051804870000;Ilmu Bedah;LULUS
 218070600111003;dr. Cindy Ayu Vironica;Perempuan;1 July 2021;JAWA TIMUR;35;3506064606950002;Ilmu Kesehatan Mata;LULUS
 178070201011012;dr. Fikri Baladraf;Laki - Laki;1 January 2018;GORONTALO;75;7571022304880000;Penyakit Dalam;LULUS
-228070900111004;dr. Fitria Ummu Habibah;Perempuan;1 July 2022;JAWA TIMUR;35;3577014310930001;Ilmu Kesehatan Anak;AKTIF
+228070900111004;dr. Fitria Ummu Habibah;Perempuan;1 July 2022;JAWA TIMUR;35;3577014310930001;Ilmu Kesehatan Anak;LULUS
 218070600111007;dr. Suci Purnamasari;Perempuan;1 July 2021;KALIMANTAN BARAT;61;6171036512910009;Ilmu Kesehatan Mata;LULUS
 218 070600111001;dr. Witha Lestari Adethia;Perempuan;1 July 2021;BENGKULU;17;1702247101940001;Ilmu Kesehatan Mata;LULUS
 188070701011002;dr. Finna Christianty;Perempuan;1 January 2019;DKI JAKARTA;31;3174056802910007;Ilmu Kesehatan T.H.T.B.K.L;LULUS
@@ -654,17 +654,17 @@ Sedang Proses;dr. Tasa Riszkia;Perempuan;1 July 2021;JAWA TIMUR;35;3573054407930
 218070600011004;dr. Heavin Rakhmat Saintika;Laki - Laki;1 January 2022;JAWA TIMUR;35;3577033005920002;Ilmu Kesehatan Mata;LULUS
 218070600011003;dr. Pranandito Trunogati;Laki - Laki;1 January 2022;KALIMANTAN BARAT;61;6172021002920002;Ilmu Kesehatan Mata;LULUS
 218070600011001;dr. Ramona Intan Permatasari;Perempuan;1 January 2022;DKI JAKARTA;31;3175066210931003;Ilmu Kesehatan Mata;LULUS
-228070600111005;dr. A'ifatin Fenisya;Perempuan;1 July 2022;JAWA TIMUR;35;352407580896003;Ilmu Kesehatan Mata;AKTIF
+228070600111005;dr. A'ifatin Fenisya;Perempuan;1 July 2022;JAWA TIMUR;35;352407580896003;Ilmu Kesehatan Mata;LULUS
 168072001011002;dr. I Gusti Lanang Andi Suharibawa;Laki - Laki;1 January 2017;BALI;51;5171020110890001;Urologi;LULUS
-228070600111004;dr. Dessy Vinoricka Andriyana;Perempuan;1 July 2022;KALIMANTAN TIMUR;64;6474034112890003;Ilmu Kesehatan Mata;AKTIF
+228070600111004;dr. Dessy Vinoricka Andriyana;Perempuan;1 July 2022;KALIMANTAN TIMUR;64;6474034112890003;Ilmu Kesehatan Mata;LULUS
 188070501011002;dr. I Komang Adi Widana;Laki - Laki;1 January 2019;BALI;51;5171041001870001;Patologi Klinik;LULUS
-228070600111007;dr. Dyah Anisa Aprilani;Perempuan;1 July 2022;BANTEN;36;3674056304960002;Ilmu Kesehatan Mata;AKTIF
+228070600111007;dr. Dyah Anisa Aprilani;Perempuan;1 July 2022;BANTEN;36;3674056304960002;Ilmu Kesehatan Mata;LULUS
 158072000011001;dr. I Made Udiyana Indradiputra;Laki - Laki;1 January 2016;BALI;51;5108061611860011;Urologi;LULUS
 198070100011003;dr. I Nyoman Marsel Rama Grandita Bhaktiyasa;Laki - Laki;1 January 2020;BALI;51;5171032203910002;Ilmu Bedah;MENGUNDURKAN DIRI
-228070600111003;dr. Erna Yulida;Perempuan;1 July 2022;KALIMANTAN SELATAN;63;6308055010910016;Ilmu Kesehatan Mata;AKTIF
-228070600111008;dr. Ghea Ananta;Laki - Laki;1 July 2022;KALIMANTAN TIMUR;64;6472061109900002;Ilmu Kesehatan Mata;AKTIF
-228070600111002;dr. Lanisa Hapsari;Perempuan;1 July 2022;JAWA TIMUR;35;3573014507960001;Ilmu Kesehatan Mata;AKTIF
-228070600111009;dr. Othe Ahmad Syarifuddin;Laki - Laki;1 July 2022;BANTEN;36;3674042110940005;Ilmu Kesehatan Mata;AKTIF
+228070600111003;dr. Erna Yulida;Perempuan;1 July 2022;KALIMANTAN SELATAN;63;6308055010910016;Ilmu Kesehatan Mata;LULUS
+228070600111008;dr. Ghea Ananta;Laki - Laki;1 July 2022;KALIMANTAN TIMUR;64;6472061109900002;Ilmu Kesehatan Mata;LULUS
+228070600111002;dr. Lanisa Hapsari;Perempuan;1 July 2022;JAWA TIMUR;35;3573014507960001;Ilmu Kesehatan Mata;LULUS
+228070600111009;dr. Othe Ahmad Syarifuddin;Laki - Laki;1 July 2022;BANTEN;36;3674042110940005;Ilmu Kesehatan Mata;LULUS
 228070600111006;dr. Rastha Sasmaka;Laki - Laki;1 July 2022;JAWA TIMUR;35;3573021602950003;Ilmu Kesehatan Mata;AKTIF
 228070600011005;dr. Aisha Andriana;Perempuan;1 January 2023;JAWA BARAT;32;3271056307960008;Ilmu Kesehatan Mata;AKTIF
 228070600011003;dr. Arya Putra Syuhada;Laki - Laki;1 January 2023;JAWA BARAT;32;3275031108890024;Ilmu Kesehatan Mata;AKTIF
@@ -787,11 +787,11 @@ Sedang Proses;dr. Tasa Riszkia;Perempuan;1 July 2021;JAWA TIMUR;35;3573054407930
 198071700111003;dr. Lisnaini;Perempuan;1 July 2019;JAWA TIMUR;35;3507197108830004;Kedokteran Fisik dan Rehabilitasi;LULUS
 218070700011003;dr. Fransiska Anggriani Salim;Perempuan;1 January 2022;KALIMANTAN SELATAN;63;6371015811940013;Ilmu Kesehatan T.H.T.B.K.L;LULUS
 218070700011001;dr. Idama Asido Rohana Simanjuntak;Perempuan;1 January 2022;KALIMANTAN SELATAN;63;6372066008920001;Ilmu Kesehatan T.H.T.B.K.L;LULUS
-228070700111003;dr. Akbar Rihansyah;Laki - Laki;1 July 2022;KALIMANTAN SELATAN;63;6372042406920002;Ilmu Kesehatan T.H.T.B.K.L;AKTIF
+228070700111003;dr. Akbar Rihansyah;Laki - Laki;1 July 2022;KALIMANTAN SELATAN;63;6372042406920002;Ilmu Kesehatan T.H.T.B.K.L;LULUS
 188070301011005;dr. Lucky Togihon Harjantho;Laki - Laki;1 January 2019;LAMPUNG;18;1871112004900001;Pulmonologi dan Kedokteran Respirasi;LULUS
-228070700111001;dr. Daniel Sumitro Logianto;Laki - Laki;1 July 2022;JAWA TIMUR;35;3578292701930001;Ilmu Kesehatan T.H.T.B.K.L;AKTIF
-228070700111004;dr. Giovani Indah Giantoro Putri;Perempuan;1 July 2022;JAWA TIMUR;35;3571027101950003;Ilmu Kesehatan T.H.T.B.K.L;AKTIF
-228070700111002;dr. Sarah Tamania Tallane;Perempuan;1 July 2022;BANTEN;36;3671116003950003;Ilmu Kesehatan T.H.T.B.K.L;AKTIF
+228070700111001;dr. Daniel Sumitro Logianto;Laki - Laki;1 July 2022;JAWA TIMUR;35;3578292701930001;Ilmu Kesehatan T.H.T.B.K.L;LULUS
+228070700111004;dr. Giovani Indah Giantoro Putri;Perempuan;1 July 2022;JAWA TIMUR;35;3571027101950003;Ilmu Kesehatan T.H.T.B.K.L;LULUS
+228070700111002;dr. Sarah Tamania Tallane;Perempuan;1 July 2022;BANTEN;36;3671116003950003;Ilmu Kesehatan T.H.T.B.K.L;LULUS
 228070700011003;dr. Dea Kharisa;Perempuan;1 January 2023;JAWA TIMUR;35;3508104710900003;Ilmu Kesehatan T.H.T.B.K.L;AKTIF
 228070700011004;dr. Ivan Septian Anggoro;Laki - Laki;1 January 2023;JAWA TIMUR;35;3578060709950004;Ilmu Kesehatan T.H.T.B.K.L;AKTIF
 188070201011009;dr. M Farid Rakhman;Laki - Laki;1 January 2019;KALIMANTAN SELATAN;63;6372062203900002;Penyakit Dalam;LULUS
@@ -1290,17 +1290,17 @@ Sedang Proses;dr. Tasa Riszkia;Perempuan;1 July 2021;JAWA TIMUR;35;3573054407930
 198070500111001;dr. Theresa Sugiarti Oetji;Perempuan;1 July 2019;JAWA BARAT;32;3277024812890011;Patologi Klinik;LULUS
 218071200011002;dr. Nata Sanjaya;Laki - Laki;1 January 2022;JAWA TIMUR;35;3571011907880004;Neurologi;LULUS
 218071200011006;dr. Wa Ode Nur Intan Octina;Perempuan;1 January 2022;SULAWESI TENGGARA;74;7472064910900007;Neurologi;LULUS
-228071200111003;dr. Annisa Rahma;Perempuan;1 July 2022;JAWA TIMUR;35;3507224502910002;Neurologi;AKTIF
+228071200111003;dr. Annisa Rahma;Perempuan;1 July 2022;JAWA TIMUR;35;3507224502910002;Neurologi;LULUS
 198070300111001;dr. Tiar Oktavian Effendi;Laki - Laki;1 July 2019;JAWA TIMUR;35;3578130410900001;Pulmonologi dan Kedokteran Respirasi;LULUS
 178070601111003;dr. Tiara Avinta Andani;Perempuan;1 July 2017;DI YOGYAKARTA;34;3404075203870003;Ilmu Kesehatan Mata;LULUS
 188070601111001;dr. Tifani Kusuma Wardani;Perempuan;1 July 2018;JAWA TIMUR;35;3573054910910002;Ilmu Kesehatan Mata;LULUS
 178070601111007;dr. Tigor Santoso Sitorus;Laki - Laki;1 July 2017;JAWA TIMUR;35;3578071108900000;Ilmu Kesehatan Mata;LULUS
-228071200111004;dr. Ditaris Galih Iman;Perempuan;1 July 2022;JAWA TIMUR;35;3507235606910002;Neurologi;AKTIF
-228071200111002;dr. Merika Soraya;Perempuan;1 July 2022;JAWA TIMUR;35;3573056205960003;Neurologi;AKTIF
+228071200111004;dr. Ditaris Galih Iman;Perempuan;1 July 2022;JAWA TIMUR;35;3507235606910002;Neurologi;LULUS
+228071200111002;dr. Merika Soraya;Perempuan;1 July 2022;JAWA TIMUR;35;3573056205960003;Neurologi;LULUS
 168071100111004;dr. Tofan Margaret Dwi Saputra;Laki - Laki;1 July 2016;JAWA TIMUR;35;35782029 03880001;Orthopedi dan Traumatologi;LULUS
-228071200111005;dr. Nada Yuliandha;Perempuan;1 July 2022;KALIMANTAN BARAT;61;6171016905930002;Neurologi;AKTIF
-228071200111006;dr. Setia Budi Tjendra;Laki - Laki;1 July 2022;JAWA TIMUR;35;3578150105870001;Neurologi;AKTIF
-228071200111001;dr. Shelby Amrus Ernanda;Laki - Laki;1 July 2022;JAWA TIMUR;35;3511070201950003;Neurologi;AKTIF
+228071200111005;dr. Nada Yuliandha;Perempuan;1 July 2022;KALIMANTAN BARAT;61;6171016905930002;Neurologi;LULUS
+228071200111006;dr. Setia Budi Tjendra;Laki - Laki;1 July 2022;JAWA TIMUR;35;3578150105870001;Neurologi;LULUS
+228071200111001;dr. Shelby Amrus Ernanda;Laki - Laki;1 July 2022;JAWA TIMUR;35;3511070201950003;Neurologi;LULUS
 228071200111007;dr. Wahyu Dwirima Kartika Sari;Perempuan;1 July 2022;JAWA TIMUR;35;3505144803900001;Neurologi;LULUS
 188070201011010;dr. Tri Dita Maharani;Perempuan;1 January 2019;JAWA TENGAH;33;3374074708800004;Penyakit Dalam;LULUS
 188070201011012;dr. Tri Wahyudi Iman Dantara;Laki - Laki;1 January 2019;SUMATERA SELATAN;16;1674022107920004;Penyakit Dalam;LULUS
@@ -1405,10 +1405,10 @@ Sedang Proses;dr. Tasa Riszkia;Perempuan;1 July 2021;JAWA TIMUR;35;3573054407930
 198072200111003;dr. Yuyun Kusnaningrum;Perempuan;1 July 2019;JAWA TIMUR;35;3507185008790003;Mikrobiologi Klinik;LULUS
 228070600111001;dr. Zahra;Perempuan;1 July 2022;JAWA TIMUR;35;3573024412960001;Ilmu Kesehatan Mata;MENGUNDURKAN DIRI
 218070400011002;dr. Geneung Patridina;Perempuan;1 January 2022;JAWA TIMUR;35;3512064811910002;Obstetri dan Ginekologi;AKTIF
-218070400011005;dr. Harry Dwi Pratama;Laki - Laki;1 January 2022;KALIMANTAN TENGAH;62;6202080505910001;Obstetri dan Ginekologi;AKTIF
+218070400011005;dr. Harry Dwi Pratama;Laki - Laki;1 January 2022;KALIMANTAN TENGAH;62;6202080505910001;Obstetri dan Ginekologi;LULUS
 218070400011003;dr. Heristanto;Laki - Laki;1 January 2022;KALIMANTAN BARAT;61;6106070507890001;Obstetri dan Ginekologi;AKTIF
 188070101111003;dr. Zaki Yamani;Laki - Laki;1 July 2018;JAWA TIMUR;35;3515111407890004;Ilmu Bedah;LULUS
-218070400011001;dr. Tendri Ayu Putri Kahar;Perempuan;1 January 2022;BENGKULU;17;1771054107950003;Obstetri dan Ginekologi;AKTIF
+218070400011001;dr. Tendri Ayu Putri Kahar;Perempuan;1 January 2022;BENGKULU;17;1771054107950003;Obstetri dan Ginekologi;LULUS
 218070400011004;dr. Yohanes adam elsoin;Laki - Laki;1 January 2022;KALIMANTAN TIMUR;64;6407062205850001;Obstetri dan Ginekologi;AKTIF
 -;dr. Zanuar Abidin;Laki - Laki;1 January 2023;JAWA TENGAH;33;3322051201900002;Ilmu Kesehatan Anak;MENGUNDURKAN DIRI
 -;dr. Ferdinand Umbu  Pati;Laki - Laki;1 July 2022;PAPUA;91;9111022711880002;Obstetri dan Ginekologi;AKTIF
@@ -1524,14 +1524,14 @@ Sedang Proses;dr. Tasa Riszkia;Perempuan;1 July 2021;JAWA TIMUR;35;3573054407930
 248071100111007;dr. Felix Giovanni Hartono;Laki - Laki;1 July 2024;JAWA TIMUR;35;3577031208990001;Orthopedi dan Traumatologi;AKTIF
 208071100111001;dr. William Putera Sukmajaya;Laki - Laki;1 July 2020;KALIMANTAN SELATAN;63;6371012907930004;Orthopedi dan Traumatologi;LULUS
 -;dr. Faiz Alam Rasyid;Laki - Laki;1 January 2021;JAWA TENGAH;33;3308010405930001;Orthopedi dan Traumatologi;LULUS
-208071100011004;dr. Muchammad Bagus Ali Hasmi;Laki - Laki;1 January 2021;JAWA TIMUR;35;3504163009930002;Orthopedi dan Traumatologi;AKTIF
+208071100011004;dr. Muchammad Bagus Ali Hasmi;Laki - Laki;1 January 2021;JAWA TIMUR;35;3504163009930002;Orthopedi dan Traumatologi;LULUS
 218071100111003;dr. Andryan Hanafi Bakri;Laki - Laki;1 July 2021;DKI JAKARTA;31;3172010401920002;Orthopedi dan Traumatologi;LULUS
 218071100111004;dr. Felix Cendikiawan;Laki - Laki;1 July 2021;JAWA TIMUR;35;3578093103920001;Orthopedi dan Traumatologi;AKTIF
 218071100111002;dr. Muhammad Alif Rio Yudhatama;Laki - Laki;1 July 2021;BANTEN;36;3604011811940166;Orthopedi dan Traumatologi;AKTIF
 218071100111001;dr. Surya Iman Muhammad;Laki - Laki;1 July 2021;JAWA TIMUR;35;3515181312940005;Orthopedi dan Traumatologi;AKTIF
 218071100011001;dr. Ade Churie Tanjaya;Laki - Laki;1 January 2022;JAWA TIMUR;35;3518161412900003;Orthopedi dan Traumatologi;AKTIF
-218071100011004;dr. Ray Asaf Hexa Pandiangan;Laki - Laki;1 January 2022;JAWA TIMUR;35;3573042806930004;Orthopedi dan Traumatologi;AKTIF
-218071100011003;dr. Teddy Arga Saputro;Laki - Laki;1 January 2022;JAWA TIMUR;35;3516050709910002;Orthopedi dan Traumatologi;AKTIF
+218071100011004;dr. Ray Asaf Hexa Pandiangan;Laki - Laki;1 January 2022;JAWA TIMUR;35;3573042806930004;Orthopedi dan Traumatologi;LULUS
+218071100011003;dr. Teddy Arga Saputro;Laki - Laki;1 January 2022;JAWA TIMUR;35;3516050709910002;Orthopedi dan Traumatologi;LULUS
 228071100111004;dr. Abraham Emes;Laki - Laki;1 July 2022;KALIMANTAN TENGAH;62;6206020408920002;Orthopedi dan Traumatologi;AKTIF
 228071100111002;dr. Lasa Dhakka Siahaan;Laki - Laki;1 July 2022;BANTEN;36;3671073003930001;Orthopedi dan Traumatologi;AKTIF
 -;dr. Muhammad Abduh;Laki - Laki;1 July 2022;JAWA TIMUR;35;3571030811950004;Orthopedi dan Traumatologi;AKTIF
@@ -1579,8 +1579,8 @@ Adaptasi;dr. Harris Kristanto;Laki - Laki;1 July 2023;DKI JAKARTA;31;31730816018
 218071600011002;dr. Fitria Mayasari;Perempuan;1 January 2022;KALIMANTAN SELATAN;63;6371014206870006;Patologi Anatomik;LULUS
 208070300011002;dr. Arina Aftritia Izzati;Perempuan;1 January 2021;JAWA TENGAH;33;3329055404910005;Pulmonologi dan Kedokteran Respirasi;LULUS
 218071600011001;dr. Hamka Muhammad Nasir Laitupa;Laki - Laki;1 January 2022;MALUKU;81;8171021413830002;Patologi Anatomik;LULUS
-228071600111001;dr. Ailen Oktaviana Hambalie;Perempuan;1 July 2022;JAWA TIMUR;35;3515135010910001;Patologi Anatomik;AKTIF
-228071600111002;dr. Rifka Ulfa Rosyida;Perempuan;1 July 2022;JAWA TIMUR;35;3573056410940003;Patologi Anatomik;AKTIF
+228071600111001;dr. Ailen Oktaviana Hambalie;Perempuan;1 July 2022;JAWA TIMUR;35;3515135010910001;Patologi Anatomik;LULUS
+228071600111002;dr. Rifka Ulfa Rosyida;Perempuan;1 July 2022;JAWA TIMUR;35;3573056410940003;Patologi Anatomik;LULUS
 228071600011002;dr. Amelinda Natania Nurasih;Perempuan;1 January 2023;JAWA TIMUR;35;3578226004880003;Patologi Anatomik;AKTIF
 228071600011001;dr. Ulfatun Nahdhiyah;Perempuan;1 January 2023;JAWA TIMUR;35;3526076705900002;Patologi Anatomik;AKTIF
 -;dr. Rachmat Suryaman;Laki - Laki;1 January 2021;JAWA TIMUR;35;3525162603880001;Pulmonologi dan Kedokteran Respirasi;LULUS
@@ -1677,7 +1677,7 @@ Adaptasi;dr. Harris Kristanto;Laki - Laki;1 July 2023;DKI JAKARTA;31;31730816018
 198070200011010;dr. Dheni Pramudia Haryanto;Laki - Laki;1 January 2020;JAWA TIMUR;35;3578022109840004;Penyakit Dalam;LULUS
 198070200011003;dr. Ketut Aditya Rahardja;Laki - Laki;1 January 2020;BALI;51;5104032210910008;Penyakit Dalam;LULUS
 198070200011004;dr. Rosmince Beatrix Wattimury;Perempuan;1 January 2020;MALUKU;81;8101016509840002;Penyakit Dalam;LULUS
-208070200011009;dr. Patricia Charisma Octavianus;Perempuan;1 January 2021;JAWA TIMUR;35;3579014404870001;Penyakit Dalam;AKTIF
+208070200011009;dr. Patricia Charisma Octavianus;Perempuan;1 January 2021;JAWA TIMUR;35;3579014404870001;Penyakit Dalam;LULUS
 208070200011008;dr. Verina Setyabudhi;Perempuan;1 January 2021;JAWA TIMUR;35;3573026907940002;Penyakit Dalam;LULUS
 218070200111005;dr. Afina Fitra Firdaus;Perempuan;1 July 2021;JAWA TIMUR;35;3510206702950002;Penyakit Dalam;LULUS
 218070200111012;dr. Arlentina Bentivolia Simamora;Perempuan;1 July 2021;SUMATERA UTARA;12;1271074708890001;Penyakit Dalam;LULUS
@@ -1693,11 +1693,11 @@ Adaptasi;dr. Harris Kristanto;Laki - Laki;1 July 2023;DKI JAKARTA;31;31730816018
 218070200111010;dr. Tohari;Laki - Laki;1 July 2021;KEP. BANGKA BELITUNG;19;1904011809910001;Penyakit Dalam;LULUS
 218 070200111003;dr. Tommi Faruq Nahdi;Laki - Laki;1 July 2021;DKI JAKARTA;31;3175062302920005;Penyakit Dalam;LULUS
 218070200111001;dr. Vincent Suriawinata;Laki - Laki;1 July 2021;DKI JAKARTA;31;3174052810880006;Penyakit Dalam;LULUS
-218070200011010;dr. Al Imroatus Sholihah;Perempuan;1 January 2022;JAWA TIMUR;35;3525075707940003;Penyakit Dalam;AKTIF
-218070200011012;dr. Amalia Nurul Hatinah;Perempuan;1 January 2022;SULAWESI SELATAN;73;7372025406940001;Penyakit Dalam;AKTIF
-218070200011005;dr. Christina Widosari;Perempuan;1 January 2022;JAWA TIMUR;35;3578035904870001;Penyakit Dalam;AKTIF
-218070200011003;dr. Fajar Maulana Raharjo;Laki - Laki;1 January 2022;JAWA TIMUR;35;3573042509930003;Penyakit Dalam;AKTIF
-218070200011011;dr. Galih Hayyu Salim Prasetyawan;Laki - Laki;1 January 2022;JAWA TIMUR;35;3511111109920003;Penyakit Dalam;AKTIF
+218070200011010;dr. Al Imroatus Sholihah;Perempuan;1 January 2022;JAWA TIMUR;35;3525075707940003;Penyakit Dalam;LULUS
+218070200011012;dr. Amalia Nurul Hatinah;Perempuan;1 January 2022;SULAWESI SELATAN;73;7372025406940001;Penyakit Dalam;LULUS
+218070200011005;dr. Christina Widosari;Perempuan;1 January 2022;JAWA TIMUR;35;3578035904870001;Penyakit Dalam;LULUS
+218070200011003;dr. Fajar Maulana Raharjo;Laki - Laki;1 January 2022;JAWA TIMUR;35;3573042509930003;Penyakit Dalam;LULUS
+218070200011011;dr. Galih Hayyu Salim Prasetyawan;Laki - Laki;1 January 2022;JAWA TIMUR;35;3511111109920003;Penyakit Dalam;LULUS
 218070300011002;dr. Aisyah Nurul Amalia;Perempuan;1 January 2022;BANTEN;36;3671136002960001;Pulmonologi dan Kedokteran Respirasi;LULUS
 218070300011001;dr. Cleine Michaela;Perempuan;1 January 2022;DKI JAKARTA;31;3172036306930001;Pulmonologi dan Kedokteran Respirasi;LULUS
 218070300011005;dr. Eka Pratiwi;Perempuan;1 January 2022;SULAWESI SELATAN;73;7309134403960001;Pulmonologi dan Kedokteran Respirasi;LULUS
@@ -1707,13 +1707,13 @@ Adaptasi;dr. Harris Kristanto;Laki - Laki;1 July 2023;DKI JAKARTA;31;31730816018
 218070300011008;dr. Saidah Mafisah;Perempuan;1 January 2022;SULAWESI TENGGARA;74;7403164112920001;Pulmonologi dan Kedokteran Respirasi;LULUS
 218070300011004;dr. Shannon Conversia Pdabo Matabei;Perempuan;1 January 2022;NUSA TENGGARA TIMUR;53;5305017107920002;Pulmonologi dan Kedokteran Respirasi;LULUS
 218070300011006;dr. Uray Riki Arif Maulana;Laki - Laki;1 January 2022;KALIMANTAN BARAT;61;6108012309910003;Pulmonologi dan Kedokteran Respirasi;LULUS
-218070200011002;dr. Heri Supriyanto;Laki - Laki;1 January 2022;DI YOGYAKARTA;34;3404072604880001;Penyakit Dalam;AKTIF
-218070200011007;dr. Liku Vianty;Perempuan;1 January 2022;JAWA BARAT;32;3275055107860010;Penyakit Dalam;AKTIF
-218070200011006;dr. Muchammad Kamal Hadi;Laki - Laki;1 January 2022;JAWA TIMUR;35;3573031302870001;Penyakit Dalam;AKTIF
-218070200011008;dr. Nadia Alfiani Jauza;Perempuan;1 January 2022;JAWA TIMUR;35;3573034607960002;Penyakit Dalam;AKTIF
-218070200011009;dr. Patan Ahmad Setiabudi;Laki - Laki;1 January 2022;JAWA TIMUR;35;3573052911940001;Penyakit Dalam;AKTIF
-218070200011004;dr. Putri Fitri Alfiantya;Perempuan;1 January 2022;JAWA TIMUR;35;3507236403930001;Penyakit Dalam;AKTIF
-218070200011001;dr. Rahmatan Lil Alamin;Laki - Laki;1 January 2022;JAWA TIMUR;35;3573031412930006;Penyakit Dalam;AKTIF
+218070200011002;dr. Heri Supriyanto;Laki - Laki;1 January 2022;DI YOGYAKARTA;34;3404072604880001;Penyakit Dalam;LULUS
+218070200011007;dr. Liku Vianty;Perempuan;1 January 2022;JAWA BARAT;32;3275055107860010;Penyakit Dalam;LULUS
+218070200011006;dr. Muchammad Kamal Hadi;Laki - Laki;1 January 2022;JAWA TIMUR;35;3573031302870001;Penyakit Dalam;LULUS
+218070200011008;dr. Nadia Alfiani Jauza;Perempuan;1 January 2022;JAWA TIMUR;35;3573034607960002;Penyakit Dalam;LULUS
+218070200011009;dr. Patan Ahmad Setiabudi;Laki - Laki;1 January 2022;JAWA TIMUR;35;3573052911940001;Penyakit Dalam;LULUS
+218070200011004;dr. Putri Fitri Alfiantya;Perempuan;1 January 2022;JAWA TIMUR;35;3507236403930001;Penyakit Dalam;LULUS
+218070200011001;dr. Rahmatan Lil Alamin;Laki - Laki;1 January 2022;JAWA TIMUR;35;3573031412930006;Penyakit Dalam;LULUS
 228070200111006;dr. Arif Qadhafy;Laki - Laki;1 July 2022;JAWA BARAT;32;3201030611890010;Penyakit Dalam;MENGUNDURKAN DIRI
 228070200111007;dr. Dinda Amalia Eka Putri;Perempuan;1 July 2022;JAWA TIMUR;35;3507185604940003;Penyakit Dalam;AKTIF
 228070200111009;dr. Iis Novianti Rosyida;Perempuan;1 July 2022;JAWA TIMUR;35;3573036911960004;Penyakit Dalam;AKTIF
@@ -1818,13 +1818,13 @@ Adaptasi;dr. Harris Kristanto;Laki - Laki;1 July 2023;DKI JAKARTA;31;31730816018
 228070300111003;dr. Harini Rahadiyanti;Perempuan;1 July 2022;JAWA TIMUR;35;3574014709900001;Pulmonologi dan Kedokteran Respirasi;LULUS
 228070300111004;dr. Peter Krisdiyanto;Laki - Laki;1 July 2022;BANTEN;36;3674012006940001;Pulmonologi dan Kedokteran Respirasi;LULUS
 228070300111002;dr. Satya Setiadi;Laki - Laki;1 July 2022;JAWA BARAT;32;3273110605920004;Pulmonologi dan Kedokteran Respirasi;LULUS
-228070300011008;dr. Abdul Malik Fajri;Laki - Laki;1 January 2023;JAWA TIMUR;35;3512072505910001;Pulmonologi dan Kedokteran Respirasi;AKTIF
-228070300011002;dr. Andriana Adolf Nggay;Perempuan;1 January 2023;NUSA TENGGARA TIMUR;53;5316044706900002;Pulmonologi dan Kedokteran Respirasi;AKTIF
-228070300011001;dr. Ari Irawan;Laki - Laki;1 January 2023;JAWA TENGAH;33;3319093107910002;Pulmonologi dan Kedokteran Respirasi;AKTIF
-228070300011007;dr. Fahnida Nazliah;Perempuan;1 January 2023;NUSA TENGGARA BARAT;52;5272024710880007;Pulmonologi dan Kedokteran Respirasi;AKTIF
-228070300011005;dr. Fibrianti Ratnasari;Perempuan;1 January 2023;NUSA TENGGARA BARAT;52;5203056202910005;Pulmonologi dan Kedokteran Respirasi;AKTIF
-228070300011004;dr. Hustorio Aliongko Simamora;Laki - Laki;1 January 2023;JAWA TIMUR;35;3573031002950012;Pulmonologi dan Kedokteran Respirasi;AKTIF
-228070300011003;dr. Lia Susanti;Perempuan;1 January 2023;KALIMANTAN TENGAH;62;6271034803900004;Pulmonologi dan Kedokteran Respirasi;AKTIF
+228070300011008;dr. Abdul Malik Fajri;Laki - Laki;1 January 2023;JAWA TIMUR;35;3512072505910001;Pulmonologi dan Kedokteran Respirasi;LULUS
+228070300011002;dr. Andriana Adolf Nggay;Perempuan;1 January 2023;NUSA TENGGARA TIMUR;53;5316044706900002;Pulmonologi dan Kedokteran Respirasi;LULUS
+228070300011001;dr. Ari Irawan;Laki - Laki;1 January 2023;JAWA TENGAH;33;3319093107910002;Pulmonologi dan Kedokteran Respirasi;LULUS
+228070300011007;dr. Fahnida Nazliah;Perempuan;1 January 2023;NUSA TENGGARA BARAT;52;5272024710880007;Pulmonologi dan Kedokteran Respirasi;LULUS
+228070300011005;dr. Fibrianti Ratnasari;Perempuan;1 January 2023;NUSA TENGGARA BARAT;52;5203056202910005;Pulmonologi dan Kedokteran Respirasi;LULUS
+228070300011004;dr. Hustorio Aliongko Simamora;Laki - Laki;1 January 2023;JAWA TIMUR;35;3573031002950012;Pulmonologi dan Kedokteran Respirasi;LULUS
+228070300011003;dr. Lia Susanti;Perempuan;1 January 2023;KALIMANTAN TENGAH;62;6271034803900004;Pulmonologi dan Kedokteran Respirasi;LULUS
 228070300011006;dr. Rahma Djamaludin;Perempuan;1 January 2023;JAWA TIMUR;35;3525134101890002;Pulmonologi dan Kedokteran Respirasi;AKTIF
 238070300111006;dr. Eko Dian Syafithra;Laki - Laki;1 July 2023;KALIMANTAN TIMUR;64;6403031704910001;Pulmonologi dan Kedokteran Respirasi;AKTIF
 238070300111003;dr. Gregorio Satrio Pinunggul;Laki - Laki;1 July 2023;JAWA TIMUR;35;3578091206900001;Pulmonologi dan Kedokteran Respirasi;AKTIF
@@ -1868,12 +1868,12 @@ Adaptasi;dr. Harris Kristanto;Laki - Laki;1 July 2023;DKI JAKARTA;31;31730816018
 198071000111001;dr. Primadhityo;Laki - Laki;1 July 2019;RIAU;14;1471030203940001;Radiologi;LULUS
 198071000011002;dr. Arini Pramodavardhani Puteri;Perempuan;1 January 2020;NUSA TENGGARA BARAT;52;5271057001930003;Radiologi;LULUS
 218071000111002;dr. Dini Agustiani;Perempuan;1 July 2021;JAWA BARAT;32;3202116608860002;Radiologi;LULUS
-218071000111001;dr. Lovita Octiara Anggita;Perempuan;1 July 2021;JAWA TIMUR;35;3515066010940001;Radiologi;AKTIF
+218071000111001;dr. Lovita Octiara Anggita;Perempuan;1 July 2021;JAWA TIMUR;35;3515066010940001;Radiologi;LULUS
 218071000111004;dr. Syafiq Ariza Amourisva;Laki - Laki;1 July 2021;LAMPUNG;18;1871132607930003;Radiologi;LULUS
 218071000011003;dr. Aisyah Amalia;Perempuan;1 January 2022;JAWA TIMUR;35;3507244409950001;Radiologi;LULUS
 218071000011002;dr. Anggadha Yuniarko Saputra;Laki - Laki;1 January 2022;JAWA TIMUR;35;3573031406920004;Radiologi;LULUS
 218071000011004;dr. Juwita Sari Sihaloho;Perempuan;1 January 2022;KALIMANTAN TIMUR;64;6408045302850004;Radiologi;LULUS
--;dr. Amelia Anggia Putri;Perempuan;1 July 2022;JAWA TIMUR;35;3578125709910002;Radiologi;AKTIF
+-;dr. Amelia Anggia Putri;Perempuan;1 July 2022;JAWA TIMUR;35;3578125709910002;Radiologi;LULUS
 228071000111002;dr. Annisa Safira Nurdila;Perempuan;1 July 2022;KALIMANTAN SELATAN;63;6371015107940008;Radiologi;LULUS
 228071000111004;dr. Dimas Noor Zulfikar Fauzi;Laki - Laki;1 July 2022;JAWA TIMUR;35;3512132806930002;Radiologi;LULUS
 228071000111008;dr. Fadlan Adima Adrianta;Laki - Laki;1 July 2022;JAWA TIMUR;35;3507220608910002;Radiologi;LULUS
@@ -1882,9 +1882,9 @@ Adaptasi;dr. Harris Kristanto;Laki - Laki;1 July 2023;DKI JAKARTA;31;31730816018
 228071000111003;dr. Oktavinayu Sari Latif;Perempuan;1 July 2022;JAWA TIMUR;35;3573036610910002;Radiologi;LULUS
 228071000111006;dr. S. Khansa Zatalini;Perempuan;1 July 2022;JAWA TIMUR;35;3573056708940005;Radiologi;AKTIF
 228071000111005;dr. Sakena Nurza;Perempuan;1 July 2022;ACEH;11;1174025201880002;Radiologi;LULUS
-228071000011002;dr. Fatkhul Ali Imron;Laki - Laki;1 January 2023;JAWA TIMUR;35;3509121604880002;Radiologi;AKTIF
--;dr. Johanna Tania Prianto;Perempuan;1 January 2023;JAWA TIMUR;35;3574036006920002;Radiologi;AKTIF
-228071000011001;dr. Krisna Ayu;Perempuan;1 January 2023;ACEH;11;1115055202920001;Radiologi;AKTIF
+228071000011002;dr. Fatkhul Ali Imron;Laki - Laki;1 January 2023;JAWA TIMUR;35;3509121604880002;Radiologi;LULUS
+-;dr. Johanna Tania Prianto;Perempuan;1 January 2023;JAWA TIMUR;35;3574036006920002;Radiologi;LULUS
+228071000011001;dr. Krisna Ayu;Perempuan;1 January 2023;ACEH;11;1115055202920001;Radiologi;LULUS
 238071000111005;dr. Adi Kuncoro;Laki - Laki;1 July 2023;JAWA TIMUR;35;3509211212960005;Radiologi;AKTIF
 -;dr. Anantika Putri;Perempuan;1 July 2023;JAWA TIMUR;35;3573026901900001;Radiologi;AKTIF
 238071000111001;dr. Elsa Larissa Widyani;Perempuan;1 July 2023;JAWA TIMUR;35;3507185410960002;Radiologi;AKTIF
@@ -1934,7 +1934,7 @@ Adaptasi;dr. Harris Kristanto;Laki - Laki;1 July 2023;DKI JAKARTA;31;31730816018
 258072000011004;dr. Asyam Syafiq Hasbullah;Laki - Laki;1 January 2026;JAWA TENGAH;33;3313051304960001;Urologi;AKTIF
 -;dr. Aulia Rahman Putra;Laki - Laki;1 July 2024;ACEH;11;1103032110890003;Urologi;AKTIF
 -;dr. Bimo Donoseputro;Laki - Laki;1 July 2024;JAWA TIMUR;35;3573030207070004;Urologi;AKTIF
-218072000111005;dr. Buyung Prasetyawan;Laki - Laki;1 July 2021;JAWA TIMUR;35;3573052112940004;Urologi;AKTIF
+218072000111005;dr. Buyung Prasetyawan;Laki - Laki;1 July 2021;JAWA TIMUR;35;3573052112940004;Urologi;LULUS
 218072000011005;dr. Dewa Gede Sudiatmika;Laki - Laki;1 January 2022;BALI;51;5104041901920003;Urologi;AKTIF
 208070700011003;dr. Dimas Bintoro Kresna Yustisia Handoyo;Laki - Laki;1 July 2023;KALIMANTAN TIMUR;64;6471052011930001;Urologi;AKTIF
 -;dr. Djodie Depati Singalaga;Laki - Laki;1 January 2021;SUMATERA SELATAN;16;1671061111920007;Urologi;AKTIF
@@ -1950,7 +1950,7 @@ Adaptasi;dr. Harris Kristanto;Laki - Laki;1 July 2023;DKI JAKARTA;31;31730816018
 218072000111002;dr. Fandy Ahmad;Laki - Laki;1 July 2021;JAWA TIMUR;35;3571012008940002;Urologi;AKTIF
 218072000011001;dr. Fauzan Kurniawan Dhani;Laki - Laki;1 January 2022;RIAU;14;1471110803950001;Urologi;AKTIF
 228072000111001;dr. Fenni Henrizal;Laki - Laki;1 July 2022;ACEH;11;1101090804900001;Urologi;AKTIF
-218072000111001;dr. Gede Wirya Diptanala Putra Duarsa;Laki - Laki;1 July 2021;BALI;51;5171030809950001;Urologi;AKTIF
+218072000111001;dr. Gede Wirya Diptanala Putra Duarsa;Laki - Laki;1 July 2021;BALI;51;5171030809950001;Urologi;LULUS
 -;dr. Gladwyn Ayudia Husain;Laki - Laki;1 July 2023;SULAWESI TENGGARA;74;741142309920002;Urologi;AKTIF
 238072000111002;dr. Herdiko Shalatin;Laki - Laki;1 July 2023;KALIMANTAN SELATAN;63;6372022608910001;Urologi;AKTIF
 238072000011005;dr. I Komang Bintang Satria Mahaputra, S.Ked;Laki - Laki;1 January 2024;BALI;51;5108021905970001;Urologi;AKTIF
@@ -1970,7 +1970,7 @@ Adaptasi;dr. Harris Kristanto;Laki - Laki;1 July 2023;DKI JAKARTA;31;31730816018
 228072000011003;dr. Muh. Edy Haeruddin;Laki - Laki;1 January 2023;NUSA TENGGARA BARAT;52;5272040606910003;Urologi;AKTIF
 228072000011001;dr. Muhammad Deyanta Hafidz Iraqi;Laki - Laki;1 January 2023;KALIMANTAN SELATAN;63;6371050112910010;Urologi;AKTIF
 258072000011003;dr. Muhammad Fakhri;Laki - Laki;1 January 2026;SULAWESI SELATAN;73;7306070709990010;Urologi;AKTIF
-218072000111004;dr. Muhammad Firas Balafif;Laki - Laki;1 July 2021;JAWA TIMUR;35;3573011909950007;Urologi;AKTIF
+218072000111004;dr. Muhammad Firas Balafif;Laki - Laki;1 July 2021;JAWA TIMUR;35;3573011909950007;Urologi;LULUS
 228072000111002;dr. Muhammad Firroy Friztanda;Laki - Laki;1 July 2022;SUMATERA SELATAN;16;1671120607950004;Urologi;AKTIF
 238072000011004;dr. Muhammad Ilham Fauzan Patimura;Laki - Laki;1 January 2024;SULAWESI SELATAN;73;73711011810960018;Urologi;AKTIF
 218072000011002;dr. Muhammad Ilmawan;Laki - Laki;1 January 2022;JAWA TIMUR;35;3573013003940003;Urologi;AKTIF
