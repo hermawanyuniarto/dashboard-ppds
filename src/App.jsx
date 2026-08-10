@@ -11,6 +11,7 @@ import {
   Library,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   X,
   Printer, 
   FolderOpen // Ikon untuk folder Drive
@@ -84,7 +85,8 @@ export default function App() {
   const [filterProdi, setFilterProdi] = useState("Semua");
   // Filter status diset "AKTIF" sebagai default bawaan
   const [filterStatus, setFilterStatus] = useState("AKTIF"); 
-  const [filterPeriode, setFilterPeriode] = useState("Semua"); 
+  const [selectedPeriodes, setSelectedPeriodes] = useState([]); // State untuk daftar centang periode
+  const [isPeriodeOpen, setIsPeriodeOpen] = useState(false); // State untuk buka/tutup menu
   const [isClient, setIsClient] = useState(false);
   
   const [currentPage, setCurrentPage] = useState(1);
@@ -132,7 +134,7 @@ export default function App() {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, filterProdi, filterStatus, filterPeriode, itemsPerPage]);
+  }, [searchTerm, filterProdi, filterStatus, selectedPeriodes, itemsPerPage]);
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
@@ -166,12 +168,10 @@ export default function App() {
     return [...new Set(periodes)].sort();
   }, [data, filterStatus, filterProdi]);
 
-  // Efek Otomatis: Jika kita mengganti Status dan ternyata pilihan Periode yang sedang aktif tidak ada di Status itu, maka Reset periode ke "Semua"
+  // Efek Otomatis: Hapus periode yang dicentang tapi ternyata sudah tidak relevan/valid akibat ganti Status
   useEffect(() => {
-    if (filterPeriode !== "Semua" && !availablePeriodes.includes(filterPeriode)) {
-      setFilterPeriode("Semua");
-    }
-  }, [availablePeriodes, filterPeriode]);
+    setSelectedPeriodes(prev => prev.filter(p => availablePeriodes.includes(p)));
+  }, [availablePeriodes]);
   // -----------------------------
 
   const filteredData = useMemo(() => {
@@ -184,11 +184,11 @@ export default function App() {
       const matchStatus = filterStatus === "Semua" || itemStatus === filterStatus.toUpperCase();
       
       const itemPeriode = item['PERIODE MASUK'] || item['TANGGAL MASUK'] || item['TAHUN MASUK'] || '-';
-      const matchPeriode = filterPeriode === "Semua" || itemPeriode === filterPeriode;
+      const matchPeriode = selectedPeriodes.length === 0 || selectedPeriodes.includes(itemPeriode);
       
       return matchSearch && matchProdi && matchStatus && matchPeriode;
     });
-  }, [data, searchTerm, filterProdi, filterStatus, filterPeriode]); 
+  }, [data, searchTerm, filterProdi, filterStatus, selectedPeriodes]); 
 
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const currentTableData = filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
@@ -272,7 +272,7 @@ export default function App() {
 
             {/* Tombol Arsip SPK RKK */}
             <a 
-              href="https://drive.google.com/drive/folders/1UMTvaE9qjy-4rQMinoruREo2-0VpKckr?usp=sharing" 
+              href="https://drive.google.com/drive/folders/GANTI_DENGAN_LINK_DRIVE_SPK_RKK_ANDA" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 shadow-sm print-hidden"
@@ -304,7 +304,7 @@ export default function App() {
             <Stethoscope className="h-10 w-10 text-indigo-600" />
             <div>
                <h1 className="text-2xl font-bold text-gray-900">Laporan Data PPDS RSSA</h1>
-               <p className="text-gray-500">Dicetak berdasarkan filter: {filterStatus} | {filterProdi} | {filterPeriode === "Semua" ? "Semua Periode" : filterPeriode}</p>
+               <p className="text-gray-500">Dicetak berdasarkan filter: {filterStatus} | {filterProdi} | {selectedPeriodes.length === 0 ? "Semua Periode" : selectedPeriodes.join(", ")}</p>
             </div>
          </div>
       </div>
@@ -346,17 +346,63 @@ export default function App() {
               ))}
             </select>
             
-            {/* Dropdown Menu untuk Filter Periode Dinamis */}
-            <select
-              className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              value={filterPeriode}
-              onChange={(e) => setFilterPeriode(e.target.value)}
-            >
-              <option value="Semua">Semua Periode</option>
-              {availablePeriodes.map(periode => (
-                <option key={periode} value={periode}>{periode}</option>
-              ))}
-            </select>
+            {/* Dropdown Menu untuk Filter Periode Multi-Select */}
+            <div className="relative w-full md:w-56">
+              <button
+                type="button"
+                className="w-full py-2 px-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm flex justify-between items-center"
+                onClick={() => setIsPeriodeOpen(!isPeriodeOpen)}
+              >
+                <span className="truncate text-gray-700">
+                  {selectedPeriodes.length === 0 
+                    ? "Semua Periode" 
+                    : `${selectedPeriodes.length} Periode Terpilih`}
+                </span>
+                <ChevronDown className="w-4 h-4 text-gray-500" />
+              </button>
+
+              {isPeriodeOpen && (
+                <>
+                  {/* Backdrop untuk klik di luar box akan menutup menu */}
+                  <div 
+                    className="fixed inset-0 z-10" 
+                    onClick={() => setIsPeriodeOpen(false)}
+                  ></div>
+                  
+                  <div className="absolute z-20 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto custom-scrollbar">
+                    <div className="p-2 border-b border-gray-100 sticky top-0 bg-white">
+                      <button 
+                        onClick={() => setSelectedPeriodes([])}
+                        className="text-xs text-indigo-600 hover:text-indigo-800 font-bold w-full text-left px-1"
+                      >
+                        Pilih Semua (Reset)
+                      </button>
+                    </div>
+                    <div className="py-1">
+                      {availablePeriodes.length > 0 ? availablePeriodes.map(periode => (
+                        <label key={periode} className="flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer">
+                          <input 
+                            type="checkbox"
+                            className="mr-2 rounded text-indigo-600 focus:ring-indigo-500 cursor-pointer"
+                            checked={selectedPeriodes.includes(periode)}
+                            onChange={() => {
+                              setSelectedPeriodes(prev => 
+                                prev.includes(periode) 
+                                  ? prev.filter(p => p !== periode) // Hapus jika sudah dicentang
+                                  : [...prev, periode] // Tambahkan jika belum dicentang
+                              );
+                            }}
+                          />
+                          <span className="text-sm text-gray-700">{periode}</span>
+                        </label>
+                      )) : (
+                        <div className="px-3 py-2 text-sm text-gray-400">Tidak ada periode</div>
+                      )}
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
 
             <select
               className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
