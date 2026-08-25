@@ -82,7 +82,7 @@ NIM;NAMA MAHASISWA;JENIS KELAMIN;PERIODE MASUK;PROVINSI;KODE PROVINSI;NIK;PRODI;
 228071500011005;dr. Fajar Ristranda;Laki - Laki;1 January 2023;JAWA TIMUR;35;3573051712890004;Anestesiologi dan Terapi Intensif;AKTIF
 228071500011004;dr. Fathimah Azzahra;Perempuan;1 January 2023;BANTEN;36;3674046505960006;Anestesiologi dan Terapi Intensif;AKTIF
 228071500011006;dr. Mohammad Sutami;Laki - Laki;1 January 2023;JAWA TIMUR;35;3573052806900005;Anestesiologi dan Terapi Intensif;AKTIF
-228071500011002;dr. Rofiudin Ali;Laki - Laki;1 January 2023;NUSA TENGGARA TIMUR;53;5371042402940006;Anestesiologi dan Terapi Intensif;AKTIF
+228071500011002;dr. Rofiudin Ali;Laki - Laki;1 January 2023;NUSA TENGGARA TIMUR;53;5371042402940006;Anestesiologi dan Terapi Intensif;NON AKTIF
 228071500011007;dr. Yoga Indrawan Pratama;Laki - Laki;1 January 2023;JAWA TIMUR;35;3572022503950004;Anestesiologi dan Terapi Intensif;AKTIF
 238071500011002;dr. Fajar Tri Mudianto;Laki - Laki;1 January 2024;JAWA TENGAH;33;3301021912950001;Anestesiologi dan Terapi Intensif;AKTIF
 238071500011003;dr. Ilham Ramadhana;Laki - Laki;1 January 2024;JAWA TIMUR;35;3515150602950001;Anestesiologi dan Terapi Intensif;AKTIF
@@ -114,7 +114,7 @@ PPDS ADAPTASI;dr. Albert Lesmana;Laki - Laki;1 January 2020;DKI JAKARTA;31;31730
 238071500111003;dr. Dessy Kusumadewi;Perempuan;1 July 2023;JAWA TIMUR;35;3526015512880010;Anestesiologi dan Terapi Intensif;AKTIF
 238071500111001;dr. Sulistiyawati;Perempuan;1 July 2023;JAWA TIMUR;35;3528046105910002;Anestesiologi dan Terapi Intensif;AKTIF
 178071501111001;dr. Amalia Rahmadinie;Perempuan;1 July 2017;KALIMANTAN SELATAN;63;6306057003900000;Anestesiologi dan Terapi Intensif;LULUS
-258071500111004;dr. Aramadhandia;Perempuan;1 July 2025;PAPUA BARAT;92;9271054903930002;Anestesiologi dan Terapi Intensif;AKTIF
+258071500111004;dr. Aramadhandia;Perempuan;1 July 2025;PAPUA BARAT;92;9271054903930002;Anestesiologi dan Terapi Intensif;NON AKTIF
 178070201011013;dr. Amanda Cininta Wowor;Perempuan;1 January 2018;KALIMANTAN TIMUR;64;6405026604890001;Penyakit Dalam;LULUS
 258071500111002;dr. Carlo Prawira Azali;Laki - Laki;1 July 2025;SUMATERA BARAT;13;1371032803950002;Anestesiologi dan Terapi Intensif;AKTIF
 258071500111006;dr. Christopher Edwin Marijono;Laki - Laki;1 July 2025;JAWA TIMUR;35;3578202112910004;Anestesiologi dan Terapi Intensif;AKTIF
@@ -383,7 +383,7 @@ PPDS ADAPTASI;dr. Albert Lesmana;Laki - Laki;1 January 2020;DKI JAKARTA;31;31730
 168070100111001;dr. Dimas Agung Angga Dwiputra;Laki - Laki;1 July 2016;JAWA TIMUR;35;3572012103900005;Ilmu Bedah;LULUS
 158070600111004;dr. Dimas Anandita W;Laki - Laki;1 July 2015;JAWA TIMUR;35;3578080405870001;Ilmu Kesehatan Mata;LULUS
 248070100111002;dr. Mudzakkir Taufiqur Rahman;Laki - Laki;1 July 2024;JAWA TIMUR;35;3509020807940003;Ilmu Bedah;AKTIF
-248070100111003;dr. Putri Lissanawidya;Perempuan;1 July 2024;JAWA TIMUR;35;3525024209950001;Ilmu Bedah;AKTIF
+248070100111003;dr. Putri Lissanawidya;Perempuan;1 July 2024;JAWA TIMUR;35;3525024209950001;Ilmu Bedah;NON AKTIF
 238070100111002;dr. Sebastian Ahmad;Laki - Laki;1 July 2023;JAWA TIMUR;35;3573021407960005;Ilmu Bedah;AKTIF
 158070100111005;dr. Dimas Prasetyo;Laki - Laki;1 July 2015;JAWA TIMUR;35;3578080311870005;Ilmu Bedah;LULUS
 248070100111001;dr. Shafri Nahdi;Laki - Laki;1 July 2024;JAWA TENGAH;33;3327120111910005;Ilmu Bedah;AKTIF
