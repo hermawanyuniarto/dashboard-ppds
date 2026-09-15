@@ -118,8 +118,9 @@ export default function App() {
 
   useEffect(() => {
     setIsClient(true);
-    // Memuat data secara otomatis dari folder public
-    fetch('/data-ppds.csv')
+    // Memuat data secara otomatis dari folder public dengan penambahan trik anti-cache (timestamp)
+    // agar browser selalu mengambil data CSV paling baru setiap kali halaman di-refresh
+    fetch(`/data-ppds.csv?v=${new Date().getTime()}`)
       .then(response => {
         if (!response.ok) throw new Error("File tidak ditemukan");
         return response.text();
@@ -272,7 +273,7 @@ export default function App() {
 
             {/* Tombol Arsip SPK RKK */}
             <a 
-              href="https://drive.google.com/drive/folders/https://drive.google.com/drive/folders/1Eo9Z_S1l5d6cfash1tMrNzltnefAJqxZ?usp=sharing" 
+              href="https://drive.google.com/drive/folders/GANTI_DENGAN_LINK_DRIVE_SPK_RKK_ANDA" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 shadow-sm print-hidden"
